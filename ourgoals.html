@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-scroll">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Goals - Guardian Angel Care Charitable Society</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,300..800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Zero-Shift Static Base Styling -->
+  <style>
+    html {
+      overflow-y: scroll;
+      scrollbar-gutter: stable;
+    }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    header {
+      width: 100% !important;
+    }
+    header > div {
+      max-width: 80rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .nav-link {
+      box-sizing: border-box !important;
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#182852',
+            sky: '#76B2E1',
+          },
+          fontFamily: {
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            nunito: ['"Nunito Sans"', 'sans-serif'],
+            lato: ['"Lato"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom Main CSS File -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="font-cormorant text-navy bg-white antialiased">
+
+<!-- ================= SEPARATE STICKY HEADER ================= -->
+<header class="absolute top-0 left-0 w-full z-50 bg-white transition-all duration-300" data-aos="fade-down" data-aos-duration="600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="shrink-0">
+      <img src="images/logo.png" alt="Guardian Angel Care" class="h-9 sm:h-11 w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-bold tracking-wide uppercase text-navy/80">
+      <a href="index.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Home</a>
+      <a href="about.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">About Us</a>
+      <a href="ourgoals.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Our Goals</a>
+      <a href="project.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Projects</a>
+      <a href="blog.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Blogs</a>
+      <a href="gallery.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Gallery</a>
+      <a href="faq.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">FAQ</a>
+      <a href="contact.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="md:hidden p-2 rounded text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-sky" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-6 py-4 space-y-3 text-sm font-bold uppercase text-navy/80">
+    <a href="index.html" class="mobile-nav-link block transition-colors hover:text-sky">Home</a>
+    <a href="about.html" class="mobile-nav-link block transition-colors hover:text-sky">About Us</a>
+    <a href="ourgoals.html" class="mobile-nav-link block transition-colors hover:text-sky">Our Goals</a>
+    <a href="project.html" class="mobile-nav-link block transition-colors hover:text-sky">Projects</a>
+    <a href="blog.html" class="mobile-nav-link block transition-colors hover:text-sky">Blogs</a>
+    <a href="gallery.html" class="mobile-nav-link block transition-colors hover:text-sky">Gallery</a>
+    <a href="faq.html" class="mobile-nav-link block transition-colors hover:text-sky">FAQ</a>
+    <a href="contact.html" class="mobile-nav-link block transition-colors hover:text-sky">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= OUR GOALS HERO SECTION ================= -->
+<!-- ================= HERO SECTION (OVERFLOW VISIBLE IS REQUIRED FOR HALF OVERLAP) ================= -->
+<section class="relative bg-white mb-28 sm:mb-32 lg:mb-36 md:min-h-[75vh] lg:min-h-[85vh] flex flex-col justify-between overflow-visible">
+  
+  <!-- Desktop Background Image (Hands Holding Blue Heart) -->
+  <div 
+    class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat transition-transform duration-1000 ease-out"
+    style="background-image: url('images/our-goals-hero-bg.png');"
+    data-aos="fade-left"
+    data-aos-duration="1200"
+  ></div>
+
+  <!-- Soft Gradient Overlay for Text Readability -->
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent"></div>
+
+  <!-- Mobile Top Image -->
+  <img 
+    src="images/our-goals-hero-bg.png" 
+    alt="Hands holding a blue heart" 
+    class="md:hidden w-full h-auto object-cover max-h-[380px]"
+    data-aos="fade-down"
+    data-aos-duration="800"
+  />
+
+  <!-- Main Hero Content Container -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-16 md:pt-24 lg:pt-32 pb-36 sm:pb-44 md:pb-48 lg:pb-52 w-full flex-1 flex items-center">
+    <div class="w-full md:w-[58%] lg:w-[46%]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      
+      <!-- Main Heading -->
+      <h1 class="font-cormorant text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold uppercase tracking-wider text-[#182852] leading-tight">
+        Our Goals
+      </h1>
+
+      <!-- Description Paragraphs in Lato font -->
+      <div class="font-lato mt-6 space-y-5 text-[#1E1E1E] text-xs sm:text-sm md:text-base lg:text-[17px] leading-relaxed max-w-xl">
+        <p>
+          We are committed to creating a compassionate and inclusive society where every individual is valued, cared for, and empowered to live with dignity.
+        </p>
+        <p>
+          Through our programs and services, we strive to bring hope, healing, and positive change.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= HALF ON HERO BG & HALF BELOW BLUE BOX (EXACT SCREENSHOT DESIGN) ================= -->
+  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4 sm:px-6 lg:px-8 pointer-events-none">
+    <div 
+      class="max-w-6xl mx-auto bg-[#182852] text-white rounded-none shadow-[0_15px_35px_rgba(0,0,0,0.18)] py-6 sm:py-7 lg:py-8 px-4 sm:px-6 lg:px-8 pointer-events-auto"
+      data-aos="fade-up" 
+      data-aos-duration="800" 
+      data-aos-delay="300"
+    >
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 divide-[#76B2E1]/60 sm:divide-x-0 lg:divide-x">
+        
+        <!-- Stat 1: 40+ Years of Service -->
+        <div class="flex items-center gap-4 py-4 sm:py-3 lg:py-0 px-2 sm:px-4 lg:px-6">
+          <div class="w-11 h-11 shrink-0 flex items-center justify-center text-[#76B2E1]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01" stroke-width="2.5" stroke-linecap="round"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-cormorant text-2xl lg:text-[30px] font-bold text-white leading-none tracking-tight">
+              40+
+            </h3>
+            <p class="font-cormorant text-sm lg:text-[15px] font-medium text-white/90 mt-1 leading-tight">
+              Years of<br />Service
+            </p>
+          </div>
+        </div>
+
+        <!-- Stat 2: 10+ Care & Support Programs -->
+        <div class="flex items-center gap-4 py-4 sm:py-3 lg:py-0 px-2 sm:px-4 lg:px-6">
+          <div class="w-11 h-11 shrink-0 flex items-center justify-center text-[#76B2E1]">
+            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.5 4a2.5 2.5 0 0 0-2.5 2.5V11H6.5A2.5 2.5 0 0 0 4 13.5v5A2.5 2.5 0 0 0 6.5 21h8.6a4 4 0 0 0 3.2-1.6l2.9-4a2 2 0 0 0-.4-2.8 2 2 0 0 0-2.8.4L16 15.5V6.5A2.5 2.5 0 0 0 13.5 4h-1zM6.5 13H10v6H6.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-cormorant text-2xl lg:text-[30px] font-bold text-white leading-none tracking-tight">
+              10+
+            </h3>
+            <p class="font-cormorant text-sm lg:text-[15px] font-medium text-white/90 mt-1 leading-tight">
+              Care &amp; Support<br />Programs
+            </p>
+          </div>
+        </div>
+
+        <!-- Stat 3: 25,000+ Lives Touched Every Year -->
+        <div class="flex items-center gap-4 py-4 sm:py-3 lg:py-0 px-2 sm:px-4 lg:px-6">
+          <div class="w-11 h-11 shrink-0 flex items-center justify-center text-[#76B2E1]">
+            <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-cormorant text-2xl lg:text-[30px] font-bold text-white leading-none tracking-tight">
+              25,000+
+            </h3>
+            <p class="font-cormorant text-sm lg:text-[15px] font-medium text-white/90 mt-1 leading-tight">
+              Lives Touched<br />Every Year
+            </p>
+          </div>
+        </div>
+
+        <!-- Stat 4: Multiple Centers & Communities -->
+        <div class="flex items-center gap-4 py-4 sm:py-3 lg:py-0 px-2 sm:px-4 lg:px-6">
+          <div class="w-11 h-11 shrink-0 flex items-center justify-center text-[#76B2E1]">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+              <circle cx="12" cy="11" r="3" stroke-width="2"></circle>
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-cormorant text-2xl lg:text-[30px] font-bold text-white leading-none tracking-tight">
+              Multiple
+            </h3>
+            <p class="font-cormorant text-sm lg:text-[15px] font-medium text-white/90 mt-1 leading-tight">
+              Centers &amp; Communities<br />Reaching Across Regions
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= OUR COMMITMENT, OUR PURPOSE & OUR APPROACH SECTION ================= -->
+<section class="pt-0 pb-16 md:pb-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+    <!-- ================= PART 1: OUR COMMITMENT, OUR PURPOSE ================= -->
+    <div class="text-center max-w-4xl mx-auto mb-12 md:mb-16" data-aos="fade-up" data-aos-duration="700">
+      <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold uppercase tracking-wider text-navy leading-tight">
+        Our Commitment, Our Purpose
+      </h2>
+      <p class="font-lato mt-3 text-sm sm:text-base text-[#1E1E1E]/90 leading-relaxed">
+        Guided by compassion, driven by purpose, we work towards building a better tomorrow.
+      </p>
+    </div>
+
+    <!-- 5 Pillar Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-5 mb-20 md:mb-28">
+      
+      <!-- Card 1: Holistic Care -->
+      <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
+          <img src="images/ourgoals-icon.png" alt="Holistic Care Icon" class="w-full h-full object-contain" />
+        </div>
+        <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
+          Holistic<br />Care
+        </h3>
+        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+          Provide comprehensive care that nurtures the body, mind, and spirit.
+        </p>
+      </div>
+
+      <!-- Card 2: Empower Through Education -->
+      <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
+          <img src="images/ourgoals-icon.png" alt="Empower Through Education Icon" class="w-full h-full object-contain" />
+        </div>
+        <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
+          Empower Through<br />Education
+        </h3>
+        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+          Promote education &amp; learning to empower individuals &amp; communities.
+        </p>
+      </div>
+
+      <!-- Card 3: Support the Vulnerable -->
+      <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
+          <img src="images/ourgoals-icon.png" alt="Support the Vulnerable Icon" class="w-full h-full object-contain" />
+        </div>
+        <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
+          Support the<br />Vulnerable
+        </h3>
+        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+          Extend help and protection to the elderly, sick, and marginalized.
+        </p>
+      </div>
+
+      <!-- Card 4: Build Stronger Communities -->
+      <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
+          <img src="images/ourgoals-icon.png" alt="Build Stronger Communities Icon" class="w-full h-full object-contain" />
+        </div>
+        <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
+          Build Stronger<br />Communities
+        </h3>
+        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+          Foster community participation and create lasting positive impact.
+        </p>
+      </div>
+
+      <!-- Card 5: Uphold Dignity & Respect -->
+      <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
+        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
+          <img src="images/ourgoals-icon.png" alt="Uphold Dignity & Respect Icon" class="w-full h-full object-contain" />
+        </div>
+        <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
+          Uphold Dignity &amp;<br />Respect
+        </h3>
+        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+          Uphold the dignity, rights, and well-being of every individual we serve.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ================= PART 2: OUR APPROACH ================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left Column: Heading, Intro & 4 Mini Cards -->
+      <div class="lg:col-span-6 space-y-8" data-aos="fade-right" data-aos-duration="800">
+        <div>
+          <h2 class="font-cormorant text-3xl sm:text-4xl font-bold uppercase tracking-wider text-navy leading-tight">
+            Our Approach
+          </h2>
+          <p class="font-lato mt-4 text-sm sm:text-base text-[#1E1E1E]/90 leading-relaxed max-w-xl">
+            We believe in a holistic, person-centered approach that addresses immediate needs while creating long-term opportunities.
+          </p>
+        </div>
+
+        <!-- 4 Sub-approach Cards Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 sm:gap-4">
+          
+          <!-- Mini Card 1 -->
+          <div class="rounded-2xl border border-sky/70 bg-white p-3.5 sm:p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="zoom-in" data-aos-delay="100">
+            <div class="w-12 h-12 rounded-full border border-sky/40 flex items-center justify-center p-2 mb-2.5">
+              <img src="images/ourgoals-icon.png" alt="Compassion First Icon" class="w-full h-full object-contain" />
+            </div>
+            <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
+              Compassion First
+            </h4>
+            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+              Every action is guided by empathy and respect.
+            </p>
+          </div>
+
+          <!-- Mini Card 2 -->
+          <div class="rounded-2xl border border-sky/70 bg-white p-3.5 sm:p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="zoom-in" data-aos-delay="200">
+            <div class="w-12 h-12 rounded-full border border-sky/40 flex items-center justify-center p-2 mb-2.5">
+              <img src="images/ourgoals-icon.png" alt="Quality & Integrity Icon" class="w-full h-full object-contain" />
+            </div>
+            <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
+              Quality &amp; Integrity
+            </h4>
+            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+              We maintain the highest standards of care &amp; transparency.
+            </p>
+          </div>
+
+          <!-- Mini Card 3 -->
+          <div class="rounded-2xl border border-sky/70 bg-white p-3.5 sm:p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="zoom-in" data-aos-delay="300">
+            <div class="w-12 h-12 rounded-full border border-sky/40 flex items-center justify-center p-2 mb-2.5">
+              <img src="images/ourgoals-icon.png" alt="Collaboration Icon" class="w-full h-full object-contain" />
+            </div>
+            <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
+              Collaboration
+            </h4>
+            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+              We work with communities to create greater impact.
+            </p>
+          </div>
+
+          <!-- Mini Card 4 -->
+          <div class="rounded-2xl border border-sky/70 bg-white p-3.5 sm:p-4 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300" data-aos="zoom-in" data-aos-delay="400">
+            <div class="w-12 h-12 rounded-full border border-sky/40 flex items-center justify-center p-2 mb-2.5">
+              <img src="images/ourgoals-icon.png" alt="Sustainability Icon" class="w-full h-full object-contain" />
+            </div>
+            <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
+              Sustainability
+            </h4>
+            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+              We build programs that create lasting &amp; meaningful change.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Column: Inspiring Quote Banner Card -->
+      <div class="lg:col-span-6" data-aos="fade-left" data-aos-duration="800">
+        <div class="relative rounded-3xl overflow-hidden shadow-xl min-h-[360px] sm:min-h-[420px] flex flex-col justify-between p-6 sm:p-10 transition-transform duration-500 hover:scale-[1.01]">
+          
+          <!-- Background Image -->
+          <img 
+            src="images/ourgoalshandlove.jpg" 
+            alt="Hands holding blue heart outdoors" 
+            class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+
+          <!-- Soft Left Gradient Overlay for Quote Readability -->
+          <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
+
+          <!-- Quote & Mission Content -->
+          <div class="relative z-10 max-w-sm sm:max-w-md space-y-6 sm:space-y-8 my-auto" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="font-cormorant text-xl sm:text-2xl md:text-3xl font-bold text-navy leading-snug">
+              “Alone we can do so little;<br />together we can do so much.”
+            </h3>
+
+            <p class="font-lato text-xs sm:text-sm text-navy/90 leading-relaxed font-medium">
+              Our mission is to continue serving humanity with love, compassion, &amp; commitment—today and for future generations.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER SECTION ================= -->
+<footer class="font-nunito bg-[#1c2c4c] text-white pt-16 pb-8" data-aos="fade-up" data-aos-duration="800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
+      
+      <!-- Column 1: Logo & Contact Info -->
+      <div class="lg:col-span-4 space-y-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3">
+          <img src="images/footerlogo.png" alt="Guardian Angel Care" class="h-14 sm:h-16 w-auto" />
+        </div>
+
+        <div class="space-y-3 pt-2 text-sm sm:text-base text-gray-200">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:info@guardianangelcare.org" class="hover:text-[#76B2E1] transition-colors">
+              info@guardianangelcare.org
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:help@guardian.com" class="hover:text-[#76B2E1] transition-colors">
+              help@guardian.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>Keezhillam, Ernakulam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="index.html" class="hover:text-[#76B2E1] transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">About Us</a></li>
+          <li><a href="ourgoals.html" class="hover:text-[#76B2E1] transition-colors">Our Goals</a></li>
+          <li><a href="project.html" class="hover:text-[#76B2E1] transition-colors">Projects</a></li>
+          <li><a href="blog.html" class="hover:text-[#76B2E1] transition-colors">Blogs</a></li>
+          <li><a href="contact.html" class="hover:text-[#76B2E1] transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Support Links -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="faq.html" class="hover:text-[#76B2E1] transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="hover:text-[#76B2E1] transition-colors">Gallery</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">Achievements</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Social Profiles & Newsletter -->
+      <div class="lg:col-span-4 space-y-6" data-aos="fade-up" data-aos-delay="400">
+        <div>
+          <h4 class="text-lg font-bold text-white mb-3">Social Profiles</h4>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-all duration-300 hover:scale-105" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-all duration-300 hover:scale-105" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-all duration-300 hover:scale-105" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-nunito text-base sm:text-lg font-bold text-[#76B2E1] mb-4">
+            Subscribe to our Newsletter
+          </h4>
+          <form class="relative flex items-center max-w-sm pr-12">
+            <input 
+              type="email" 
+              placeholder="Enter your Email" 
+              class="font-nunito w-full bg-white text-gray-700 placeholder-gray-400 text-sm sm:text-base px-5 py-4 rounded-xl focus:outline-none shadow-sm pr-20"
+              required
+            />
+            <button 
+              type="submit" 
+              class="font-nunito absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 sm:translate-x-4 px-6 sm:px-8 py-3.5 rounded-xl bg-[#76B2E1] text-[#1c2c4c] font-semibold text-sm sm:text-base hover:bg-sky-300 transition-colors shadow-md active:scale-95"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="pt-8 border-t border-white/10 text-center">
+      <p class="text-sm text-gray-300">
+        &copy; 2026 Guardian Angel Care Charitable Society. All Rights Reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- AOS Animation Script -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50
+  });
+</script>
+
+<!-- Main Common JavaScript File -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

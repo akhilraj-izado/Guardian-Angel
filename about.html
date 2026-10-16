@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-scroll">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Guardian Angel Care Charitable Society</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,300..800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- Zero-Shift Static Base Styling -->
+  <style>
+   html {
+     overflow-y: scroll;
+     scrollbar-gutter: stable;
+   }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden;
+    }
+    header {
+      width: 100% !important;
+    }
+    header > div {
+      max-width: 80rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .nav-link {
+      box-sizing: border-box !important;
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Custom Main CSS File -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#182852',
+            sky: '#76B2E1',
+            black: '#000000',
+          },
+          fontFamily: {
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            nunito: ['"Nunito Sans"', 'sans-serif'],
+            lato: ['"Lato"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-cormorant text-navy bg-white antialiased">
+
+<!-- ================= SEPARATE STICKY HEADER ================= -->
+<header class="absolute top-0 left-0 w-full z-50 bg-white transition-all duration-300" data-aos="fade-down" data-aos-duration="600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="shrink-0">
+      <img src="images/logo.png" alt="Guardian Angel Care" class="h-9 sm:h-11 w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-bold tracking-wide uppercase text-navy/80">
+      <a href="index.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Home</a>
+      <a href="about.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">About Us</a>
+      <a href="ourgoals.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Our Goals</a>
+      <a href="project.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Projects</a>
+      <a href="blog.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Blogs</a>
+      <a href="gallery.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Gallery</a>
+      <a href="faq.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">FAQ</a>
+      <a href="contact.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="md:hidden p-2 rounded text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-sky" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-6 py-4 space-y-3 text-sm font-bold uppercase text-navy/80">
+    <a href="index.html" class="mobile-nav-link block transition-colors hover:text-sky">Home</a>
+    <a href="about.html" class="mobile-nav-link block transition-colors hover:text-sky">About Us</a>
+    <a href="ourgoals.html" class="mobile-nav-link block transition-colors hover:text-sky">Our Goals</a>
+    <a href="project.html" class="mobile-nav-link block transition-colors hover:text-sky">Projects</a>
+    <a href="blog.html" class="mobile-nav-link block transition-colors hover:text-sky">Blogs</a>
+    <a href="gallery.html" class="mobile-nav-link block transition-colors hover:text-sky">Gallery</a>
+    <a href="faq.html" class="mobile-nav-link block transition-colors hover:text-sky">FAQ</a>
+    <a href="contact.html" class="mobile-nav-link block transition-colors hover:text-sky">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= ABOUT PAGE HERO SECTION ================= -->
+<section class="relative z-30 bg-[#FAF6ED] mb-24 sm:mb-28 lg:mb-32 overflow-visible md:min-h-[75vh] lg:min-h-[88vh]">
+  
+  <!-- Desktop Background Image (Right Aligned) -->
+  <div 
+    class="hidden md:block absolute inset-0 bg-cover bg-no-repeat bg-right"
+    style="background-image: url('images/about-hero-bg.png');"
+  ></div>
+  
+  <!-- Soft Gradient Overlay for Text Readability -->
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#FAF6ED] via-[#FAF6ED]/85 to-transparent"></div>
+
+  <!-- Mobile Top Image -->
+  <img 
+    src="images/about-hero-bg.png" 
+    alt="Caregiver smiling with elderly woman" 
+    class="md:hidden w-full h-auto object-cover"
+  />
+
+  <!-- Main Hero Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 md:pt-16 lg:pt-20 pb-28 sm:pb-36 md:pb-44 lg:pb-48">
+    <div class="w-full md:w-[60%] lg:w-[50%]" data-aos="fade-right" data-aos-duration="900">
+      
+      <!-- Small Category Tag -->
+      <p class="font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-navy">
+        About <span class="text-sky">Us</span>
+      </p>
+
+      <!-- Main Heading -->
+      <h1 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold uppercase tracking-wide text-navy leading-[1.15] whitespace-nowrap">
+        Our Story (History &amp; Founding)
+      </h1>
+
+      <!-- Description Paragraphs in Lato font -->
+      <div class="font-lato mt-5 space-y-4 text-[#1E1E1E] text-sm sm:text-base leading-relaxed max-w-xl">
+        <p>
+          Established in 1985, Guardian Angel Care Charitable Society is a registered charitable organization functioning under the Travancore–Cochin Literary, Scientific, and Charitable Societies Registration Act, 1955, (Reg. No. ER 101/85 dated 6 March 1985).
+        </p>
+        <p>
+          The Society was founded with a vision to create compassionate spaces for healing, care, education, and social empowerment.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= FLOATING FEATURE BAR ================= -->
+  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-40 px-4 sm:px-6 lg:px-10 pointer-events-none">
+    <div 
+      class="max-w-6xl mx-auto bg-white rounded-[26px] sm:rounded-3xl shadow-[0_10px_35px_rgba(0,0,0,0.06)] border border-[#76B2E1]/40 py-5 sm:py-6 px-3 sm:px-6 pointer-events-auto"
+      data-aos="fade-up"
+      data-aos-delay="150"
+      data-aos-duration="800"
+    >
+      
+      <!-- Grid with Sky Blue Vertical Dividers -->
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-[#76B2E1]/60">
+        
+        <!-- Item 1: Palliative Care -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-care-2.png" alt="Palliative and geriatric care" class="w-10 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Palliative<br />and geriatric<br />care
+          </p>
+        </li>
+
+        <!-- Item 2: Mental Healthcare -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-support.png" alt="Mental healthcare" class="w-10 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Mental<br />healthcare &amp;<br />rehabilitation
+          </p>
+        </li>
+
+        <!-- Item 3: Community Development -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-book.png" alt="Community development" class="w-10 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Community<br />development<br />programmes
+          </p>
+        </li>
+
+        <!-- Item 4: Education & Child Welfare -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-group.png" alt="Education & child welfare" class="w-10 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Education &amp;<br />child<br />welfare
+          </p>
+        </li>
+
+        <!-- Item 5: Spiritual Outreach -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-cross.png" alt="Spiritual outreach" class="w-10 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Spiritual &amp;<br />humanitarian<br />outreach
+          </p>
+        </li>
+
+        <!-- Item 6: Residential Care -->
+        <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
+          <img src="images/icon-house.png" alt="Residential care" class="w-12 h-10 object-contain" />
+          <p class="font-cormorant mt-2.5 text-base sm:text-[17px] font-semibold text-black leading-tight">
+            Residential care<br />and support<br />services
+          </p>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= OUR MISSION & VISION SECTION ================= -->
+<section class="relative z-10 py-16 md:py-5 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 lg:space-y-8">
+    
+    <!-- ROW 1: MISSION -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch" data-aos="fade-up" data-aos-duration="900">
+      <div class="md:col-span-7 overflow-hidden shadow-sm h-72 sm:h-80 md:h-[350px]">
+        <img 
+          src="images/about-mission.png" 
+          alt="Community members learning and caring together" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <div class="md:col-span-5 bg-[#FDEDC9] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-center items-center text-center shadow-sm">
+        <h3 class="font-cormorant text-2xl sm:text-3xl font-bold uppercase tracking-wide text-navy">
+          Our Mission:
+        </h3>
+        
+        <div class="font-lato mt-4 text-xs sm:text-[13.5px] leading-relaxed text-[#1E1E1E]/90 space-y-3">
+          <p>
+            We are committed to advancing inclusive and sustainable community development by serving orphaned children, the destitute, the elderly, the terminally ill, and individuals in need of mental healthcare.
+          </p>
+          <p>
+            Through structured care programmes, accessible quality education, vocational training, and compassionate palliative and geriatric services, we create measurable social impact and sustainable pathways to dignity, independence, and long-term resilience.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROW 2: VISION -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+      <div class="order-2 md:order-1 md:col-span-5 bg-[#FDEDC9] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-center items-center text-center shadow-sm">
+        <h3 class="font-cormorant text-2xl sm:text-3xl font-bold uppercase tracking-wide text-navy mb-4 sm:mb-6">
+          Our Vision:
+        </h3>
+        
+        <div class="font-cormorant text-3xl sm:text-4xl md:text-[44px] font-medium text-navy leading-tight">
+          <p>Honour <span class="text-sky font-semibold">Life</span></p>
+          <p class="mt-1 sm:mt-2">and Offer</p>
+          <p class="mt-1 sm:mt-2 text-sky font-semibold">Hope</p>
+        </div>
+      </div>
+
+      <div class="order-1 md:order-2 md:col-span-7 overflow-hidden shadow-sm h-72 sm:h-80 md:h-[350px]">
+        <img 
+          src="images/about-vision.png" 
+          alt="Caregivers smiling warmly with elderly lady" 
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= OUR CORE VALUES SLIDER SECTION ================= -->
+<section class="py-16 md:py-24 bg-white overflow-hidden" data-aos="fade-up" data-aos-duration="900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.15em] text-navy">
+        Our Core Values
+      </h2>
+    </div>
+
+    <div class="swiper valuesSwiper pb-12">
+      <div class="swiper-wrapper">
+
+        <!-- Slide 1: COMPASSION -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-navy text-white rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-compassion-val.png" alt="Compassion" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
+              Compassion
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+              We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2: INCLUSIVITY -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-[#76B2E1] text-navy rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-inclusivity-val.png" alt="Inclusivity" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
+              Inclusivity
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+              We embrace diversity and create welcoming environments where all people feel valued and supported.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 3: UNCONDITIONAL LOVE -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-navy text-white rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-love-val.png" alt="Unconditional Love" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
+              Unconditional Love
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+              We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 4: EMPOWERMENT -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-[#76B2E1] text-navy rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-empower-val.png" alt="Empowerment" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
+              Empowerment
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+              We help individuals achieve their fullest potential through education, support, and opportunity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 5: INTEGRITY -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-navy text-white rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-integrity-val.png" alt="Integrity" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
+              Integrity
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+              We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 6: HOPE & HEALING -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-[#76B2E1] text-navy rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-compassion-val.png" alt="Hope & Healing" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
+              Hope &amp; Healing
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+              Restoring faith, physical wellbeing, and emotional comfort to the suffering through comprehensive palliative care.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 7: SOCIAL JUSTICE -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-navy text-white rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-inclusivity-val.png" alt="Social Justice" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
+              Social Justice
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+              Advocating for the rights and equitable treatment of destitute children, the elderly, and marginalized communities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 8: EXCELLENCE -->
+        <div class="swiper-slide h-auto">
+          <div class="bg-[#76B2E1] text-navy rounded-2xl p-6 sm:p-8 flex flex-col items-center text-center h-full min-h-[320px] shadow-md hover:shadow-lg transition-transform duration-300 hover:-translate-y-1">
+            <img src="images/icon-empower-val.png" alt="Excellence in Service" class="w-16 h-16 object-contain mb-5" />
+            <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
+              Excellence
+            </h3>
+            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+              Upholding the highest standards of professional and compassionate assistance in every rehabilitation initiative.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination values-pagination !bottom-0"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MEET OUR TEAM SECTION ================= -->
+<section class="pt-0 pb-16 md:pb-24 bg-white overflow-hidden" data-aos="fade-up" data-aos-duration="900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+    <div class="text-center mb-10 md:mb-14">
+      <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.15em] text-navy">
+        Meet Our Team
+      </h2>
+    </div>
+
+    <div class="swiper teamSwiper pb-12">
+      <div class="swiper-wrapper">
+
+        <!-- Member 1 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop&q=80" alt="George Thomas" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">George Thomas</h3>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&auto=format&fit=crop&q=80" alt="Vincent Markus" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Vincent Markus</h3>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=80" alt="Aleena Martin" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Aleena Martin</h3>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&auto=format&fit=crop&q=80" alt="Yethul Mohan" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Yethul Mohan</h3>
+        </div>
+
+        <!-- Member 5 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=500&auto=format&fit=crop&q=80" alt="David Roy" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">David Roy</h3>
+        </div>
+
+        <!-- Member 6 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=80" alt="Sarah Jenkins" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Sarah Jenkins</h3>
+        </div>
+
+        <!-- Member 7 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=500&auto=format&fit=crop&q=80" alt="Rahul Mathew" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Rahul Mathew</h3>
+        </div>
+
+        <!-- Member 8 -->
+        <div class="swiper-slide flex flex-col items-center text-center">
+          <div class="w-44 sm:w-48 md:w-52 h-64 sm:h-72 md:h-80 rounded-full overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&auto=format&fit=crop&q=80" alt="Priya Nair" class="w-full h-full object-cover" />
+          </div>
+          <h3 class="font-lato mt-3 text-base sm:text-lg font-bold text-navy">Priya Nair</h3>
+        </div>
+
+      </div>
+
+      <div class="swiper-pagination team-pagination !bottom-0"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= OUR PARTNERS & COLLABORATORS SECTION ================= -->
+<section class="relative bg-white overflow-hidden">
+  <div class="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] flex items-center">
+    <div 
+      class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat"
+      style="background-image: url('images/partners-bg.png');"
+    ></div>
+
+    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
+
+    <img 
+      src="images/partners-bg.png" 
+      alt="Hands stacked together in partnership" 
+      class="md:hidden w-full h-auto object-cover"
+    />
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-16 w-full">
+      <div class="w-full md:w-[60%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900">
+        <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-navy leading-tight">
+          Our Partners &amp; Collaborators
+        </h2>
+
+        <div class="font-lato mt-4 sm:mt-5 space-y-4 text-[#1E1E1E] text-xs sm:text-sm md:text-[15px] leading-relaxed">
+          <p>
+            The Society welcomes Donors and benefactors, Volunteers, CSR partnerships, Healthcare collaborations, Educational partnerships, Community support initiatives.
+          </p>
+          <p class="font-bold text-navy text-sm sm:text-base pt-1">
+            Together, we can continue building a compassionate and inclusive society.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM STATS BAR -->
+  <div class="bg-navy text-white py-6 md:py-8 border-t border-navy/20" data-aos="fade-in" data-aos-duration="800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-sky/40 text-left">
+        <li class="flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/icon-calendar-stat.png" alt="Years of Service" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
+          <div>
+            <p class="font-cormorant text-2xl sm:text-3xl font-bold leading-none text-white">40+</p>
+            <p class="font-cormorant text-xs sm:text-sm font-semibold text-gray-200 mt-1 leading-tight">Years of<br />Service</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/icon-lives-stat.png" alt="Lives Impacted" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
+          <div>
+            <p class="font-cormorant text-2xl sm:text-3xl font-bold leading-none text-white">5000+</p>
+            <p class="font-cormorant text-xs sm:text-sm font-semibold text-gray-200 mt-1 leading-tight">Lives<br />Impacted</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/icon-programs-stat.png" alt="Care Programmes" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
+          <div>
+            <p class="font-cormorant text-2xl sm:text-3xl font-bold leading-none text-white">5+</p>
+            <p class="font-cormorant text-xs sm:text-sm font-semibold text-gray-200 mt-1 leading-tight">Care<br />Programmes</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="400">
+          <img src="images/icon-staff-stat.png" alt="Dedicated Staff" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
+          <div>
+            <p class="font-cormorant text-2xl sm:text-3xl font-bold leading-none text-white">100+</p>
+            <p class="font-cormorant text-xs sm:text-sm font-semibold text-gray-200 mt-1 leading-tight">Dedicated<br />Staff</p>
+          </div>
+        </li>
+        <li class="col-span-2 sm:col-span-1 flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="500">
+          <img src="images/icon-volunteer-stat.png" alt="Volunteer helps" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
+          <div>
+            <p class="font-cormorant text-2xl sm:text-3xl font-bold leading-none text-white">500+</p>
+            <p class="font-cormorant text-xs sm:text-sm font-semibold text-gray-200 mt-1 leading-tight">of Volunteer<br />helps</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY OUR WORK MATTERS SECTION ================= -->
+<section class="relative bg-[#FAF7F0] overflow-hidden">
+  <div 
+    class="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('images/why-work-matters-bg.png');"
+  ></div>
+
+  <div class="lg:hidden w-full">
+    <img 
+      src="images/why-work-matters-bg.png" 
+      alt="Hands holding a growing plant" 
+      class="w-full h-auto object-cover max-h-[350px]"
+    />
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-16 lg:py-24 flex lg:justify-end">
+    <div class="w-full lg:w-[48%] xl:w-[44%] lg:ml-auto flex flex-col justify-center" data-aos="fade-left" data-aos-duration="900">
+      <p class="font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-sky">
+        What We Do
+      </p>
+
+      <h2 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold uppercase tracking-wide text-navy leading-tight">
+        Why Our Work Matters
+      </h2>
+
+      <p class="font-lato mt-4 text-xs sm:text-sm md:text-base leading-relaxed text-[#1E1E1E]/90 max-w-lg">
+        For nearly four decades, Guardian Angel Care Charitable Society has provided hope and support to vulnerable individuals and families.
+      </p>
+
+      <div class="mt-8 mb-8 grid grid-cols-2 sm:grid-cols-5 gap-5 sm:gap-2.5 lg:gap-3 text-center">
+        <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <img src="images/icon-respect.png" alt="Respect and dignity" class="w-8 h-8 object-contain" />
+          </div>
+          <p class="font-cormorant mt-2 text-sm sm:text-base font-bold text-navy leading-snug">
+            Respect and<br />dignity
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <img src="images/icon-access.png" alt="Access to compassionate care" class="w-8 h-8 object-contain" />
+          </div>
+          <p class="font-cormorant mt-2 text-sm sm:text-base font-bold text-navy leading-snug">
+            Access to<br />compassionate care
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <img src="images/icon-education-why.png" alt="Educational opportunities" class="w-8 h-8 object-contain" />
+          </div>
+          <p class="font-cormorant mt-2 text-sm sm:text-base font-bold text-navy leading-snug">
+            Educational<br />opportunities
+          </p>
+        </div>
+
+        <div class="flex flex-col items-center" data-aos="zoom-in" data-aos-delay="400">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <img src="images/icon-spiritual.png" alt="Emotional & spiritual support" class="w-8 h-8 object-contain" />
+          </div>
+          <p class="font-cormorant mt-2 text-sm sm:text-base font-bold text-navy leading-snug">
+            Emotional &amp;<br />spiritual support
+          </p>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 flex flex-col items-center" data-aos="zoom-in" data-aos-delay="500">
+          <div class="w-10 h-10 flex items-center justify-center">
+            <img src="images/icon-safe.png" alt="A safe & caring environment" class="w-8 h-8 object-contain" />
+          </div>
+          <p class="font-cormorant mt-2 text-sm sm:text-base font-bold text-navy leading-snug">
+            A safe &amp; caring<br />environment
+          </p>
+        </div>
+      </div>
+
+      <p class="font-lato font-bold text-xs sm:text-sm md:text-base leading-relaxed text-[#1E1E1E] max-w-lg">
+        Our institutions continue to touch countless lives through dedicated service rooted in faith and humanity.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER SECTION ================= -->
+<footer class="font-nunito bg-[#1c2c4c] text-white pt-16 pb-8" data-aos="fade-in" data-aos-duration="800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
+      
+      <!-- Column 1 -->
+      <div class="lg:col-span-4 space-y-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3">
+          <img src="images/footerlogo.png" alt="Guardian Angel Care" class="h-14 sm:h-16 w-auto" />
+        </div>
+
+        <div class="space-y-3 pt-2 text-sm sm:text-base text-gray-200">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:info@guardianangelcare.org" class="hover:text-[#76B2E1] transition-colors">
+              info@guardianangelcare.org
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:help@guardian.com" class="hover:text-[#76B2E1] transition-colors">
+              help@guardian.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>Keezhillam, Ernakulam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="index.html" class="hover:text-[#76B2E1] transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">About Us</a></li>
+          <li><a href="ourgoals.html" class="hover:text-[#76B2E1] transition-colors">Our Goals</a></li>
+          <li><a href="project.html" class="hover:text-[#76B2E1] transition-colors">Projects</a></li>
+          <li><a href="blog.html" class="hover:text-[#76B2E1] transition-colors">Blogs</a></li>
+          <li><a href="contact.html" class="hover:text-[#76B2E1] transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="faq.html" class="hover:text-[#76B2E1] transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="hover:text-[#76B2E1] transition-colors">Gallery</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">Achievements</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="lg:col-span-4 space-y-6" data-aos="fade-up" data-aos-delay="400">
+        <div>
+          <h4 class="text-lg font-bold text-white mb-3">Social Profiles</h4>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-nunito text-base sm:text-lg font-bold text-[#76B2E1] mb-4">
+            Subscribe to our Newsletter
+          </h4>
+          <form class="relative flex items-center max-w-sm pr-12">
+            <input 
+              type="email" 
+              placeholder="Enter your Email" 
+              class="font-nunito w-full bg-white text-gray-700 placeholder-gray-400 text-sm sm:text-base px-5 py-4 rounded-xl focus:outline-none shadow-sm pr-20" 
+              required 
+            />
+            <button 
+              type="submit" 
+              class="font-nunito absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 sm:translate-x-4 px-6 sm:px-8 py-3.5 rounded-xl bg-[#76B2E1] text-[#1c2c4c] font-semibold text-sm sm:text-base hover:bg-sky-300 transition-colors shadow-md"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-white/10 text-center">
+      <p class="text-sm text-gray-300">
+        &copy; 2026 Guardian Angel Care Charitable Society. All Rights Reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Swiper JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- AOS JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Initializations -->
+<script>
+  // 1. Core Values Swiper Carousel
+  const valuesSwiper = new Swiper('.valuesSwiper', {
+    slidesPerView: 1.2,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.values-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      480: { slidesPerView: 2, spaceBetween: 18 },
+      768: { slidesPerView: 3, spaceBetween: 20 },
+      1024: { slidesPerView: 4, spaceBetween: 24 },
+      1280: { slidesPerView: 5, spaceBetween: 24 },
+    },
+  });
+
+  // 2. Meet Our Team Swiper Slider
+  const teamSwiper = new Swiper('.teamSwiper', {
+    slidesPerView: 1.4,
+    spaceBetween: 16,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.team-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      480: { slidesPerView: 2.2, spaceBetween: 20 },
+      768: { slidesPerView: 3.2, spaceBetween: 24 },
+      1024: { slidesPerView: 4, spaceBetween: 28 },
+      1280: { slidesPerView: 5, spaceBetween: 32 },
+    },
+  });
+
+  // 3. Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 50,
+  });
+</script>
+
+<!-- Main Common JavaScript File -->
+<script src="js/main.js"></script>
+
+</body>
+</html>

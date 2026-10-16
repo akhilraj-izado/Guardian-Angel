@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-scroll">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Guardian Angel Care Charitable Society</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,300..800;1,6..12,300..800&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+
+  <!-- Zero-Shift Static Base Styling -->
+  <style>
+   html {
+     overflow-y: scroll;
+     scrollbar-gutter: stable;
+   }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden;
+    }
+    header {
+      width: 100% !important;
+    }
+    header > div {
+      max-width: 80rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .nav-link {
+      box-sizing: border-box !important;
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <!-- Custom Main CSS File -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#182852',
+            sky: '#76B2E1',
+          },
+          fontFamily: {
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            nunito: ['"Nunito Sans"', 'sans-serif'],
+            lato: ['"Lato"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="font-cormorant text-navy bg-white antialiased">
+
+<!-- ================= SEPARATE STICKY HEADER ================= -->
+<header class="absolute top-0 left-0 w-full z-50 bg-white transition-all duration-300" data-aos="fade-down" data-aos-duration="600">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="index.html" class="shrink-0">
+      <img src="images/logo.png" alt="Guardian Angel Care" class="h-9 sm:h-11 w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-bold tracking-wide uppercase text-navy/80">
+      <a href="index.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Home</a>
+      <a href="about.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">About Us</a>
+      <a href="ourgoals.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Our Goals</a>
+      <a href="project.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Projects</a>
+      <a href="blog.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Blogs</a>
+      <a href="gallery.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Gallery</a>
+      <a href="faq.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">FAQ</a>
+      <a href="contact.html" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Contact</a>
+    </nav>
+
+    <!-- Mobile menu button -->
+    <button id="menuBtn" class="md:hidden p-2 rounded text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-sky" aria-label="Open menu" aria-expanded="false">
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile nav -->
+  <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-6 py-4 space-y-3 text-sm font-bold uppercase text-navy/80">
+    <a href="index.html" class="mobile-nav-link block transition-colors hover:text-sky">Home</a>
+    <a href="about.html" class="mobile-nav-link block transition-colors hover:text-sky">About Us</a>
+    <a href="ourgoals.html" class="mobile-nav-link block transition-colors hover:text-sky">Our Goals</a>
+    <a href="project.html" class="mobile-nav-link block transition-colors hover:text-sky">Projects</a>
+    <a href="blog.html" class="mobile-nav-link block transition-colors hover:text-sky">Blogs</a>
+    <a href="gallery.html" class="mobile-nav-link block transition-colors hover:text-sky">Gallery</a>
+    <a href="faq.html" class="mobile-nav-link block transition-colors hover:text-sky">FAQ</a>
+    <a href="contact.html" class="mobile-nav-link block transition-colors hover:text-sky">Contact</a>
+  </nav>
+</header>
+
+<!-- ================= BLOG PAGE HERO SECTION ================= -->
+<section class="relative bg-[#F9F5EE] overflow-hidden md:min-h-[80vh] flex flex-col justify-center">
+  <div 
+    class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat"
+    style="background-image: url('images/blog-hero-bg.png');"
+  ></div>
+
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#F9F5EE] via-[#F9F5EE]/85 to-transparent"></div>
+
+  <img 
+    src="images/blog-hero-bg.png" 
+    alt="Notebook with coffee cup" 
+    class="md:hidden w-full h-auto object-cover max-h-[300px]"
+  />
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-16 w-full flex items-center">
+    <div class="w-full md:w-[60%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900">
+      <p class="font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-sky">
+        Our <span class="text-navy">Blog</span>
+      </p>
+
+      <h1 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold uppercase tracking-wide text-navy leading-[1.2]">
+        Stories of Hope, Faith &amp;<br />Compassion
+      </h1>
+
+      <div class="font-lato mt-5 space-y-4 text-[#1E1E1E] text-xs sm:text-sm md:text-base leading-relaxed max-w-xl">
+        <p>
+          Discover inspiring stories, community updates, and moments of service that reflect our mission of bringing hope, healing, and dignity to every life we touch.
+        </p>
+        <p>
+          Stay updated with our latest news, events, and inspiring stories.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG LISTING & SIDEBAR SECTION ================= -->
+<section class="py-12 md:py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+    <!-- Top Filter Bar -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 md:mb-12" data-aos="fade-down" data-aos-duration="800">
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3" id="blog-tabs">
+        <button onclick="switchTab('all')" data-tab="all" class="tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-sky text-white shadow-sm">
+          All Blogs
+        </button>
+        <button onclick="switchTab('stories')" data-tab="stories" class="tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-navy hover:text-sky">
+          Stories
+        </button>
+        <button onclick="switchTab('news')" data-tab="news" class="tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-navy hover:text-sky">
+          News &amp; Events
+        </button>
+        <button onclick="switchTab('updates')" data-tab="updates" class="tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-navy hover:text-sky">
+          Updates
+        </button>
+        <button onclick="switchTab('inspiration')" data-tab="inspiration" class="tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-navy hover:text-sky">
+          Inspiration
+        </button>
+      </div>
+
+      <div class="relative w-full md:w-72 lg:w-80">
+        <input 
+          type="text" 
+          id="blog-search" 
+          onkeyup="filterBlogs()" 
+          placeholder="Search Blogs" 
+          class="w-full pl-5 pr-11 py-2.5 rounded-full border border-gray-300 text-xs sm:text-sm focus:outline-none focus:border-sky font-lato"
+        />
+        <svg class="w-4 h-4 text-gray-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+
+      <!-- Left Column: Posts List -->
+      <div class="lg:col-span-8 flex flex-col justify-between">
+        <div id="blog-cards-container" class="space-y-6">
+
+          <!-- Card 1 -->
+          <article class="blog-card bg-white rounded-2xl border border-sky/30 shadow-sm p-3.5 sm:p-4 flex flex-col sm:flex-row gap-5 items-stretch" data-category="stories" data-aos="fade-up" data-aos-delay="100">
+            <div class="sm:w-[42%] h-52 sm:h-auto rounded-xl overflow-hidden shrink-0">
+              <img src="images/blog-img-1.png" alt="A Life Filled with Gratitude and New Beginnings" class="w-full h-full object-cover" />
+            </div>
+            <div class="sm:w-[58%] flex flex-col justify-between py-1">
+              <div>
+                <span class="font-cormorant text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 block">STORIES</span>
+                <h3 class="font-cormorant text-xl sm:text-2xl font-bold text-navy mt-1 leading-snug">
+                  A Life Filled with Gratitude and New Beginnings
+                </h3>
+                <p class="font-lato mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  Meet Leelamma, a resident of our Retirement Home, whose journey is a beautiful reminder that it's never too late for a new beginning.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 flex items-center justify-between border-t border-gray-100">
+                <div class="flex items-center gap-4 text-xs text-gray-500 font-lato">
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+                <a href="#" class="font-lato rounded-full border border-navy/70 text-navy px-4 py-1 text-xs font-semibold hover:bg-navy hover:text-white transition-colors">Read More</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="blog-card bg-white rounded-2xl border border-sky/30 shadow-sm p-3.5 sm:p-4 flex flex-col sm:flex-row gap-5 items-stretch" data-category="news" data-aos="fade-up" data-aos-delay="200">
+            <div class="sm:w-[42%] h-52 sm:h-auto rounded-xl overflow-hidden shrink-0">
+              <img src="images/blog-img-2.png" alt="Annual Day Celebration at Bethesda Schools" class="w-full h-full object-cover" />
+            </div>
+            <div class="sm:w-[58%] flex flex-col justify-between py-1">
+              <div>
+                <span class="font-cormorant text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 block">NEWS &amp; EVENTS</span>
+                <h3 class="font-cormorant text-xl sm:text-2xl font-bold text-navy mt-1 leading-snug">
+                  Annual Day Celebration at Bethesda Schools
+                </h3>
+                <p class="font-lato mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  A day filled with joy, performances, and proud moments as our students showcased their talents and spirit.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 flex items-center justify-between border-t border-gray-100">
+                <div class="flex items-center gap-4 text-xs text-gray-500 font-lato">
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+                <a href="#" class="font-lato rounded-full border border-navy/70 text-navy px-4 py-1 text-xs font-semibold hover:bg-navy hover:text-white transition-colors">Read More</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="blog-card bg-white rounded-2xl border border-sky/30 shadow-sm p-3.5 sm:p-4 flex flex-col sm:flex-row gap-5 items-stretch" data-category="inspiration" data-aos="fade-up" data-aos-delay="100">
+            <div class="sm:w-[42%] h-52 sm:h-auto rounded-xl overflow-hidden shrink-0">
+              <img src="images/blog-img-3.png" alt="The Power of Prayer and Community" class="w-full h-full object-cover" />
+            </div>
+            <div class="sm:w-[58%] flex flex-col justify-between py-1">
+              <div>
+                <span class="font-cormorant text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 block">INSPIRATION</span>
+                <h3 class="font-cormorant text-xl sm:text-2xl font-bold text-navy mt-1 leading-snug">
+                  The Power of Prayer and Community
+                </h3>
+                <p class="font-lato mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  How faith and togetherness continue to bring comfort, strength, and hope to countless lives.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 flex items-center justify-between border-t border-gray-100">
+                <div class="flex items-center gap-4 text-xs text-gray-500 font-lato">
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+                <a href="#" class="font-lato rounded-full border border-navy/70 text-navy px-4 py-1 text-xs font-semibold hover:bg-navy hover:text-white transition-colors">Read More</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="blog-card bg-white rounded-2xl border border-sky/30 shadow-sm p-3.5 sm:p-4 flex flex-col sm:flex-row gap-5 items-stretch" data-category="updates" data-aos="fade-up" data-aos-delay="200">
+            <div class="sm:w-[42%] h-52 sm:h-auto rounded-xl overflow-hidden shrink-0">
+              <img src="images/blog-img-4.png" alt="Expanding Palliative Care to Reach More Lives" class="w-full h-full object-cover" />
+            </div>
+            <div class="sm:w-[58%] flex flex-col justify-between py-1">
+              <div>
+                <span class="font-cormorant text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-600 block">UPDATES</span>
+                <h3 class="font-cormorant text-xl sm:text-2xl font-bold text-navy mt-1 leading-snug">
+                  Expanding Palliative Care to Reach More Lives
+                </h3>
+                <p class="font-lato mt-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  Our Peace Mission Centre continues its mission to provide compassionate care to those who need it most.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 flex items-center justify-between border-t border-gray-100">
+                <div class="flex items-center gap-4 text-xs text-gray-500 font-lato">
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1.5"><svg class="w-3.5 h-3.5 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+                <a href="#" class="font-lato rounded-full border border-navy/70 text-navy px-4 py-1 text-xs font-semibold hover:bg-navy hover:text-white transition-colors">Read More</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <p id="no-results-msg" class="hidden text-center text-gray-500 font-lato py-12">No blogs found matching your criteria.</p>
+
+        <!-- Pagination Bar -->
+        <div class="flex items-center justify-center gap-2 pt-10" id="pagination-controls" data-aos="fade-up">
+          <button onclick="changePage(currentPage - 1)" class="p-2 text-navy hover:text-sky transition-colors flex items-center justify-center" aria-label="Previous Page">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+          </button>
+          
+          <button onclick="changePage(1)" class="page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all bg-sky text-white flex items-center justify-center">1</button>
+          <button onclick="changePage(2)" class="page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all text-navy hover:bg-gray-100 flex items-center justify-center">2</button>
+          <button onclick="changePage(3)" class="page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all text-navy hover:bg-gray-100 flex items-center justify-center">3</button>
+          <span class="font-lato text-xs text-navy/60 px-1 font-bold">...</span>
+          <button onclick="changePage(10)" class="page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all text-navy hover:bg-gray-100 flex items-center justify-center">10</button>
+
+          <button onclick="changePage(currentPage + 1)" class="p-2 text-navy hover:text-sky transition-colors flex items-center justify-center" aria-label="Next Page">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Sidebar -->
+      <aside class="lg:col-span-4 space-y-8" data-aos="fade-left" data-aos-duration="900">
+        <div class="bg-[#FAF4E6] rounded-2xl p-6 sm:p-7 shadow-sm">
+          <h3 class="font-cormorant text-2xl font-bold text-navy mb-1">Popular Posts</h3>
+          <div class="w-12 h-0.5 bg-amber-400 mb-6"></div>
+
+          <div class="space-y-4">
+            <a href="#" class="bg-white rounded-xl overflow-hidden p-2 flex gap-3.5 items-center shadow-sm border border-sky/20 hover:border-sky transition-colors group">
+              <div class="w-24 h-16 rounded-lg overflow-hidden shrink-0">
+                <img src="images/blog-img-5.png" alt="A Life of Faith and Service" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+              </div>
+              <div>
+                <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-tight line-clamp-2 group-hover:text-sky">
+                  A Life of Faith and Service
+                </h4>
+                <div class="flex items-center gap-3 text-[11px] text-gray-500 font-lato mt-2">
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="bg-white rounded-xl overflow-hidden p-2 flex gap-3.5 items-center shadow-sm border border-sky/20 hover:border-sky transition-colors group">
+              <div class="w-24 h-16 rounded-lg overflow-hidden shrink-0">
+                <img src="images/blog-img-6.png" alt="Nurturing Young Minds and Hearts" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+              </div>
+              <div>
+                <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-tight line-clamp-2 group-hover:text-sky">
+                  Nurturing Young Minds and Hearts
+                </h4>
+                <div class="flex items-center gap-3 text-[11px] text-gray-500 font-lato mt-2">
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="#" class="bg-white rounded-xl overflow-hidden p-2 flex gap-3.5 items-center shadow-sm border border-sky/20 hover:border-sky transition-colors group">
+              <div class="w-24 h-16 rounded-lg overflow-hidden shrink-0">
+                <img src="images/blog-img-7.png" alt="How You Can Make a Difference" class="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+              </div>
+              <div>
+                <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-tight line-clamp-2 group-hover:text-sky">
+                  How You Can Make a Difference
+                </h4>
+                <div class="flex items-center gap-3 text-[11px] text-gray-500 font-lato mt-2">
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> May 12, 2025</span>
+                  <span class="inline-flex items-center gap-1"><svg class="w-3 h-3 text-sky" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 6 min</span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-[#FAF4E6] rounded-2xl p-8 sm:p-10 shadow-sm flex flex-col items-center text-center">
+          <div class="text-[#EFAD4D] text-5xl font-serif font-black leading-none mb-3">“</div>
+          <blockquote class="font-cormorant text-xl sm:text-2xl font-bold text-navy leading-snug">
+            “Carry each other’s burdens, and in this way you will fulfill the law of Christ.”
+          </blockquote>
+          <cite class="font-cormorant mt-5 text-lg sm:text-xl font-bold text-navy block not-italic">
+            Galatians 6:2
+          </cite>
+          <div class="w-16 h-0.5 bg-[#EFAD4D] mt-5"></div>
+        </div>
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= STAY CONNECTED / NEWSLETTER SECTION ================= -->
+<section class="relative bg-[#FBF5EC] overflow-hidden py-14 sm:py-16 md:py-20" data-aos="fade-in" data-aos-duration="900">
+  <div 
+    class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat"
+    style="background-image: url('images/subscribe-bg.png');"
+  ></div>
+
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#FBF5EC] via-[#FBF5EC]/85 to-transparent"></div>
+
+  <img 
+    src="images/subscribe-bg.png" 
+    alt="Desk with open book, coffee and plant vase" 
+    class="md:hidden w-full h-auto object-cover max-h-[260px] mb-6"
+  />
+
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="w-full md:w-[60%] lg:w-[50%]" data-aos="fade-right" data-aos-delay="150">
+      <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-[0.12em] text-navy leading-tight">
+        Stay Connected
+      </h2>
+
+      <p class="font-lato mt-3 text-xs sm:text-sm md:text-[15px] leading-relaxed text-[#1E1E1E]/90 max-w-md">
+        Subscribe to our newsletter and stay updated with our latest stories and activities.
+      </p>
+
+      <form class="mt-8 flex items-center bg-[#FBF5EC] sm:bg-[#FAF3E7] rounded-full border border-sky/70 p-1.5 sm:p-2 shadow-sm focus-within:border-sky focus-within:ring-2 focus-within:ring-sky/20 transition-all max-w-lg">
+        <input 
+          type="email" 
+          placeholder="Enter your email address" 
+          required
+          class="font-lato w-full bg-transparent px-4 sm:px-5 py-2 text-xs sm:text-sm text-[#1E1E1E] placeholder:text-gray-500 focus:outline-none"
+        />
+        <button 
+          type="submit" 
+          class="font-lato inline-flex items-center justify-center gap-2 bg-navy hover:bg-[#121f42] text-white px-5 sm:px-7 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors shrink-0 shadow-sm"
+        >
+          <span>Subscribe</span>
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section> 
+
+<!-- ================= FOOTER SECTION ================= -->
+<footer class="font-nunito bg-[#1c2c4c] text-white pt-16 pb-8" data-aos="fade-in" data-aos-duration="800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
+      
+      <!-- Column 1 -->
+      <div class="lg:col-span-4 space-y-5" data-aos="fade-up" data-aos-delay="100">
+        <div class="flex items-center gap-3">
+          <img src="images/footerlogo.png" alt="Guardian Angel Care" class="h-14 sm:h-16 w-auto" />
+        </div>
+
+        <div class="space-y-3 pt-2 text-sm sm:text-base text-gray-200">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:info@guardianangelcare.org" class="hover:text-[#76B2E1] transition-colors">
+              info@guardianangelcare.org
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+            </svg>
+            <a href="mailto:help@guardian.com" class="hover:text-[#76B2E1] transition-colors">
+              help@guardian.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-[#76B2E1] shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>Keezhillam, Ernakulam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="200">
+        <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="index.html" class="hover:text-[#76B2E1] transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">About Us</a></li>
+          <li><a href="ourgoals.html" class="hover:text-[#76B2E1] transition-colors">Our Goals</a></li>
+          <li><a href="project.html" class="hover:text-[#76B2E1] transition-colors">Projects</a></li>
+          <li><a href="blog.html" class="hover:text-[#76B2E1] transition-colors">Blogs</a></li>
+          <li><a href="contact.html" class="hover:text-[#76B2E1] transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="lg:col-span-2" data-aos="fade-up" data-aos-delay="300">
+        <h4 class="text-lg font-bold text-white mb-4">Support</h4>
+        <ul class="space-y-2.5 text-sm sm:text-base text-gray-300">
+          <li><a href="faq.html" class="hover:text-[#76B2E1] transition-colors">FAQ</a></li>
+          <li><a href="gallery.html" class="hover:text-[#76B2E1] transition-colors">Gallery</a></li>
+          <li><a href="about.html" class="hover:text-[#76B2E1] transition-colors">Achievements</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="lg:col-span-4 space-y-6" data-aos="fade-up" data-aos-delay="400">
+        <div>
+          <h4 class="text-lg font-bold text-white mb-3">Social Profiles</h4>
+          <div class="flex items-center gap-3">
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="Facebook">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="Twitter">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+              </svg>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-lg bg-white flex items-center justify-center text-[#76B2E1] hover:bg-[#76B2E1] hover:text-white transition-colors" aria-label="LinkedIn">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-nunito text-base sm:text-lg font-bold text-[#76B2E1] mb-4">
+            Subscribe to our Newsletter
+          </h4>
+          <form class="relative flex items-center max-w-sm pr-12">
+            <input 
+              type="email" 
+              placeholder="Enter your Email" 
+              class="font-nunito w-full bg-white text-gray-700 placeholder-gray-400 text-sm sm:text-base px-5 py-4 rounded-xl focus:outline-none shadow-sm pr-20"
+              required
+            />
+            <button 
+              type="submit" 
+              class="font-nunito absolute right-0 top-1/2 -translate-y-1/2 translate-x-3 sm:translate-x-4 px-6 sm:px-8 py-3.5 rounded-xl bg-[#76B2E1] text-[#1c2c4c] font-semibold text-sm sm:text-base hover:bg-sky-300 transition-colors shadow-md"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-white/10 text-center">
+      <p class="text-sm text-gray-300">
+        &copy; 2026 Guardian Angel Care Charitable Society. All Rights Reserved.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- AOS JS CDN -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<!-- Blog Filtering & Pagination Logic -->
+<script>
+  let currentTab = 'all';
+  let currentPage = 1;
+
+  function switchTab(category) {
+    currentTab = category;
+    
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      if (btn.dataset.tab === category) {
+        btn.className = "tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all bg-sky text-white shadow-sm";
+      } else {
+        btn.className = "tab-btn font-lato px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all text-navy hover:text-sky";
+      }
+    });
+
+    filterBlogs();
+  }
+
+  function filterBlogs() {
+    const query = document.getElementById('blog-search').value.toLowerCase().trim();
+    const cards = document.querySelectorAll('.blog-card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      const cardCat = card.dataset.category;
+      const cardText = card.innerText.toLowerCase();
+
+      const matchesTab = (currentTab === 'all' || cardCat === currentTab);
+      const matchesSearch = cardText.includes(query);
+
+      if (matchesTab && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const noResultMsg = document.getElementById('no-results-msg');
+    if (noResultMsg) {
+      if (visibleCount === 0) {
+        noResultMsg.classList.remove('hidden');
+      } else {
+        noResultMsg.classList.add('hidden');
+      }
+    }
+
+    // Refresh AOS positions after filtering
+    if (typeof AOS !== 'undefined') {
+      AOS.refresh();
+    }
+  }
+
+  function changePage(page) {
+    if (page < 1 || page > 10) return;
+    currentPage = page;
+
+    document.querySelectorAll('.page-num').forEach(btn => {
+      if (parseInt(btn.innerText) === page) {
+        btn.className = "page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all bg-sky text-white flex items-center justify-center";
+      } else {
+        btn.className = "page-num font-lato w-8 h-8 rounded-full text-xs font-bold transition-all text-navy hover:bg-gray-100 flex items-center justify-center";
+      }
+    });
+
+    const tabsElement = document.getElementById('blog-tabs');
+    if (tabsElement) {
+      tabsElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 40,
+  });
+</script>
+
+<!-- Main Common JavaScript File (Last) -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
