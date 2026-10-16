@@ -1,0 +1,102 @@
+@{
+    var pageTitle = ViewData["Title"] as string;
+    var fullTitle = string.IsNullOrEmpty(pageTitle)
+        ? "Guardian Angel Care Charitable Society"
+        : $"{pageTitle} - Guardian Angel Care Charitable Society";
+    var bodyClass = ViewData["BodyClass"] as string ?? "font-cormorant text-navy bg-white antialiased";
+}
+<!DOCTYPE html>
+<html lang="en" class="overflow-y-scroll">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@fullTitle</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@@0,6..12,300..800;1,6..12,300..800&family=Lato:ital,wght@@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@@2.3.4/dist/aos.css" />
+
+  <!-- Zero-Shift Static Base Styling -->
+  <style>
+    html {
+      overflow-y: scroll;
+      scrollbar-gutter: stable;
+    }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden; /* Prevents horizontal scrollbars during slide animations */
+    }
+    header {
+      width: 100% !important;
+    }
+    header > div {
+      max-width: 80rem !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+    }
+    .nav-link {
+      box-sizing: border-box !important;
+      display: inline-block !important;
+    }
+  </style>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#182852',
+            sky: '#76B2E1',
+          },
+          fontFamily: {
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            nunito: ['"Nunito Sans"', 'sans-serif'],
+            lato: ['"Lato"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  @await RenderSectionAsync("Styles", required: false)
+
+  <!-- Custom Main CSS File -->
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body class="@bodyClass">
+
+  <partial name="_Header" />
+
+  @RenderBody()
+
+  <partial name="_Footer" />
+
+  <!-- AOS JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@@2.3.4/dist/aos.js"></script>
+
+  @await RenderSectionAsync("Scripts", required: false)
+
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+    });
+  </script>
+
+  <!-- Main Common JavaScript File -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

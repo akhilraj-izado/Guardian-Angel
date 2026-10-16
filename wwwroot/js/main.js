@@ -12,15 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 2. Auto-Detect Current Page
-  const currentPath = window.location.pathname.split('/').pop().split('?')[0] || 'index.html';
+  const normalize = path => path.replace(/\/+$/, '').toLowerCase() || '/';
+  const currentPath = normalize(window.location.pathname);
+  const isCurrent = link => normalize(new URL(link.href, window.location.origin).pathname) === currentPath;
 
   // Desktop Links Active State
   document.querySelectorAll('.nav-link').forEach(link => {
-    const linkHref = link.getAttribute('href');
-
-    const isCurrentPage =
-      linkHref === currentPath ||
-      (currentPath === '' && linkHref === 'index.html');
+    const isCurrentPage = isCurrent(link);
 
     link.classList.toggle('active', isCurrentPage);
 
@@ -35,8 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Links Active State
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    const linkHref = link.getAttribute('href');
-    if (linkHref === currentPath || (currentPath === '' && linkHref === 'index.html')) {
+    if (isCurrent(link)) {
       link.classList.add('text-sky', 'pl-1');
       link.classList.remove('text-navy/80');
     }
