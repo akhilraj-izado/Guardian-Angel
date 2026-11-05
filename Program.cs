@@ -1,8 +1,19 @@
+using GuardianAngel.Services;
 using Microsoft.AspNetCore.Rewrite;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+// Session holds the expected captcha code between showing the form and submitting it
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(20);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
+builder.Services.AddSingleton<CaptchaService>();
 
 var app = builder.Build();
 
@@ -17,6 +28,8 @@ app.UseRewriter(new RewriteOptions()
     .AddRedirect(@"^(about|ourgoals|project|blog|gallery|faq|contact)\.html$", "$1", StatusCodes.Status301MovedPermanently));
 
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.MapControllers();
 

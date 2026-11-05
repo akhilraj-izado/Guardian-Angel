@@ -1,40 +1,316 @@
-<header class="absolute top-0 left-0 w-full z-50 bg-white transition-all duration-300 @ViewData["HeaderClass"]" data-aos="fade-down" data-aos-duration="600">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between">
-      
-      <!-- Logo -->
-      <a href="/" class="shrink-0">
-        <img src="/images/logo.png" alt="Guardian Angel Care" class="h-9 sm:h-11 w-auto" />
-      </a>
+<!-- ================= HEADER CUSTOM STYLES ================= -->
+<style>
+    /* Base Zero-Shift Styling */
+    .nav-link {
+        box-sizing: border-box !important;
+        display: inline-flex !important;
+        align-items: center !important;
+    }
 
-      <!-- Desktop nav -->
-      <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-bold tracking-wide uppercase text-navy/80">
-        <a href="/" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Home</a>
-        <a href="/about" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">About Us</a>
-        <a href="/ourgoals" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Our Goals</a>
-        <a href="/project" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Projects</a>
-        <a href="/blog" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Blogs</a>
-        <a href="/gallery" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Gallery</a>
-        <a href="/faq" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">FAQ</a>
-        <a href="/contact" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Contact</a>
-      </nav>
+    /* Mega menu persistent open state on click */
+    .mega-menu-open {
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        transform: translateY(0) !important;
+    }
 
-      <!-- Mobile menu button -->
-      <button id="menuBtn" class="md:hidden p-2 rounded text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-sky" aria-label="Open menu" aria-expanded="false">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+    /* Rotate arrow when open */
+    .arrow-rotate {
+        transform: rotate(180deg) !important;
+    }
+</style>
+
+<!-- ================= SEPARATE STICKY / ABSOLUTE HEADER ================= -->
+<header id="siteHeader" class="fixed top-0 left-0 w-full z-50 bg-white transition-all duration-300 @ViewData["HeaderClass"]" data-aos="fade-down" data-aos-duration="600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-4 flex items-center justify-between relative">
+
+        <!-- Logo -->
+        <a href="/" class="shrink-0">
+            <img src="/images/logo.png" alt="Guardian Angel Care" class="h-9 sm:h-11 w-auto" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-xs lg:text-sm font-bold tracking-wide uppercase text-navy/80">
+            <a href="/" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Home</a>
+            <a href="/about" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">About Us</a>
+            <a href="/ourgoals" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Our Goals</a>
+
+            <!-- ================= MEGA MENU TRIGGER (PROJECTS) ================= -->
+            <!-- 'py-4' prevents hover gap between header line and mega menu -->
+            <div id="projectDropdownContainer" class="group py-4">
+                <button type="button"
+                        id="projectDropdownBtn"
+                        class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky cursor-pointer outline-none bg-transparent uppercase font-bold"
+                        style="display: inline-flex !important; align-items: center; gap: 4px; white-space: nowrap;">
+                    <span>Projects</span>
+                    <svg id="projectDropdownArrow"
+                         class="w-3.5 h-3.5 shrink-0 transition-transform duration-300 text-navy/70 group-hover:text-sky group-hover:rotate-180"
+                         fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+
+                <!-- Mega Menu Panel (Seamless hover bridge using before pseudo element) -->
+                <div id="projectMegaMenu"
+                     class="invisible opacity-0 group-hover:visible group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 ease-out transform translate-y-2 group-hover:translate-y-0 absolute left-0 right-0 top-full w-full bg-white border border-gray-100 rounded-2xl shadow-2xl p-6 lg:p-8 z-50 pointer-events-none before:absolute before:-top-4 before:left-0 before:w-full before:h-4 before:content-['']">
+
+                    <!-- Top Badge & Label -->
+                    <div class="flex items-center justify-between pb-4 mb-5 border-b border-gray-100">
+                        <div>
+                            <span class="text-xs font-bold tracking-widest uppercase text-sky block">Our Mission Wings</span>
+                            <h4 class="font-cormorant text-xl lg:text-2xl font-bold text-navy capitalize">Key Institutions &amp; Initiatives</h4>
+                        </div>
+                        <a href="/project" class="text-xs font-semibold normal-case text-sky hover:text-navy transition-colors inline-flex items-center gap-1">
+                            View All Projects &rarr;
+                        </a>
+                    </div>
+
+                    <!-- 3-Column Grid for Items -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 normal-case font-normal">
+
+                        <!-- Item 1: Guardian Angel Retirement Home -->
+                        <a href="/project/guardian-angel-retirement-home" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/Sunlit-Pink-Building-Courtyar.png" loading="lazy" alt="Guardian Angel Retirement Home" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Guardian Angel Retirement Home
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Holistic elderly living &amp; care</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 2: Yeldho Mar Baselios Boy’s Home -->
+                        <a href="/project/yeldho-mar-baselios-boys-home" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/Sunlit Pink Campus in Bloom.png" loading="lazy" alt="Yeldho Mar Baselios Boy’s Home" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Yeldho Mar Baselios Boy’s Home
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Child welfare &amp; education support</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 3: Bethsada Geriatric Destitute Home -->
+                        <a href="/project/bethsada-geriatric-destitute-home" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/Serene Chapel Entrance in Blooming Greenery.png" loading="lazy" alt="Bethsada Geriatric Destitute Home" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Bethsada Geriatric Destitute Home
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Compassionate shelter for needy elders</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 4: Bethesda Mental Health Center -->
+                        <a href="/project/bethesda-mental-health-center" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/Sunlit Green Courtyard Architecture.png" loading="lazy" alt="Bethesda Mental Health Center" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Bethesda Mental Health Center
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Psychiatric care &amp; rehabilitation</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 5: Bethsada Public School -->
+                        <a href="/project/bethsada-public-school" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/Bethsada Public School Entrance.png" loading="lazy" alt="Bethsada Public School" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Bethsada Public School
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Value-based modern education</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 6: Mar Gabriel Prayer Tower -->
+                        <a href="/project/mar-gabriel-prayer-tower" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/mar-gabriel-prayer-tower-hero.png" loading="lazy" alt="Mar Gabriel Prayer Tower" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Mar Gabriel Prayer Tower
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Intercessory prayer &amp; spiritual solace</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 7: Hamara Auditorium -->
+                        <a href="/project/hamara-auditorium" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/hamara-auditorium-building.png" loading="lazy" alt="Hamara Auditorium" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Hamara Auditorium
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Community gatherings &amp; welfare events</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 8: Guardian Angel Peace Mission Center -->
+                        <a href="/project/guardian-angel-peace-mission-center" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/peace-mission-centre-hero.png" loading="lazy" alt="Guardian Angel Peace Mission Center" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Guardian Angel Peace Mission Center
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Central coordination &amp; healthcare</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 9: The Hermits -->
+                        <a href="/project/the-hermits" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/hermits-hero.png" loading="lazy" alt="The Hermits" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    The Hermits
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Retreat, contemplation &amp; ministry</p>
+                            </div>
+                        </a>
+
+                        <!-- Item 10: Bethsada Magazine -->
+                        <a href="/project/bethsada-magazine" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
+                            <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
+                                <img src="/images/bethsada-magazine-recognition.png" loading="lazy" alt="Bethsada Magazine" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                            </div>
+                            <div>
+                                <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
+                                    Bethsada Magazine
+                                </h5>
+                                <p class="text-[11px] text-gray-500 font-lato line-clamp-1">News, stories &amp; school publications</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+            <a href="/blog" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Blogs</a>
+            <a href="/gallery" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Gallery</a>
+            <a href="/faq" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">FAQ</a>
+            <a href="/contact" class="nav-link pb-1 border-b-2 border-transparent transition-colors hover:text-sky">Contact</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" class="md:hidden p-2 rounded text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-sky" aria-label="Open menu" aria-expanded="false">
+            <svg id="menuIcon" class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
     </div>
 
     <!-- Mobile nav -->
-    <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-6 py-4 space-y-3 text-sm font-bold uppercase text-navy/80">
-      <a href="/" class="mobile-nav-link block transition-colors hover:text-sky">Home</a>
-      <a href="/about" class="mobile-nav-link block transition-colors hover:text-sky">About Us</a>
-      <a href="/ourgoals" class="mobile-nav-link block transition-colors hover:text-sky">Our Goals</a>
-      <a href="/project" class="mobile-nav-link block transition-colors hover:text-sky">Projects</a>
-      <a href="/blog" class="mobile-nav-link block transition-colors hover:text-sky">Blogs</a>
-      <a href="/gallery" class="mobile-nav-link block transition-colors hover:text-sky">Gallery</a>
-      <a href="/faq" class="mobile-nav-link block transition-colors hover:text-sky">FAQ</a>
-      <a href="/contact" class="mobile-nav-link block transition-colors hover:text-sky">Contact</a>
+    <nav id="mobileMenu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg px-6 py-4 space-y-3 text-sm font-bold uppercase text-navy/80 max-h-[85vh] overflow-y-auto">
+        <a href="/" class="mobile-nav-link block transition-colors hover:text-sky">Home</a>
+        <a href="/about" class="mobile-nav-link block transition-colors hover:text-sky">About Us</a>
+        <a href="/ourgoals" class="mobile-nav-link block transition-colors hover:text-sky">Our Goals</a>
+
+        <!-- Mobile Projects Accordion Dropdown -->
+        <div class="py-1">
+            <button id="mobileProjectsBtn" type="button" class="w-full flex items-center justify-between uppercase transition-colors hover:text-sky outline-none">
+                <span>Projects</span>
+                <svg id="mobileProjectsArrow" class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+            </button>
+
+            <div id="mobileProjectsList" class="hidden pl-3 pt-2.5 pb-1 space-y-2.5 text-xs font-semibold normal-case text-navy/70 border-l-2 border-sky/40 ml-1 mt-2">
+                <a href="/project/guardian-angel-retirement-home" class="block hover:text-sky">Guardian Angel Retirement Home</a>
+                <a href="/project/yeldho-mar-baselios-boys-home" class="block hover:text-sky">Yeldho Mar Baselios Boy’s Home</a>
+                <a href="/project/bethsada-geriatric-destitute-home" class="block hover:text-sky">Bethsada Geriatric Destitute Home</a>
+                <a href="/project/bethesda-mental-health-center" class="block hover:text-sky">Bethesda Mental Health Center</a>
+                <a href="/project/bethsada-public-school" class="block hover:text-sky">Bethsada Public School</a>
+                <a href="/project/mar-gabriel-prayer-tower" class="block hover:text-sky">Mar Gabriel Prayer Tower</a>
+                <a href="/project/hamara-auditorium" class="block hover:text-sky">Hamara Auditorium</a>
+                <a href="/project/guardian-angel-peace-mission-center" class="block hover:text-sky">Guardian Angel Peace Mission Center</a>
+                <a href="/project/the-hermits" class="block hover:text-sky">The Hermits</a>
+                <a href="/project/bethsada-magazine" class="block hover:text-sky">Bethsada Magazine</a>
+            </div>
+        </div>
+
+        <a href="/blog" class="mobile-nav-link block transition-colors hover:text-sky">Blogs</a>
+        <a href="/gallery" class="mobile-nav-link block transition-colors hover:text-sky">Gallery</a>
+        <a href="/faq" class="mobile-nav-link block transition-colors hover:text-sky">FAQ</a>
+        <a href="/contact" class="mobile-nav-link block transition-colors hover:text-sky">Contact</a>
     </nav>
-  </header>
+</header>
+
+<!-- ================= JAVASCRIPT LOGIC ================= -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Desktop Mega Menu Toggle on Click
+      const projectBtn = document.getElementById('projectDropdownBtn');
+      const projectMenu = document.getElementById('projectMegaMenu');
+      const projectArrow = document.getElementById('projectDropdownArrow');
+      const projectContainer = document.getElementById('projectDropdownContainer');
+
+      if (projectBtn && projectMenu) {
+        projectBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          const isOpen = projectMenu.classList.toggle('mega-menu-open');
+          if (projectArrow) {
+            projectArrow.classList.toggle('arrow-rotate', isOpen);
+          }
+        });
+
+        // Close mega menu when clicking outside
+        document.addEventListener('click', function (e) {
+          if (!projectContainer.contains(e.target)) {
+            projectMenu.classList.remove('mega-menu-open');
+            if (projectArrow) {
+              projectArrow.classList.remove('arrow-rotate');
+            }
+          }
+        });
+      }
+
+      // Sticky header: add a shadow once the page has scrolled
+      const siteHeader = document.getElementById('siteHeader');
+      if (siteHeader) {
+        const onScroll = function () { siteHeader.classList.toggle('shadow-md', window.scrollY > 10); };
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+
+      // Mobile Hamburger Menu Toggle      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function () {
+          const isHidden = mobileMenu.classList.toggle('hidden');
+          menuBtn.setAttribute('aria-expanded', !isHidden);
+        });
+      }
+
+      // Mobile Projects Accordion Dropdown Toggle
+      const mobileProjectsBtn = document.getElementById('mobileProjectsBtn');
+      const mobileProjectsList = document.getElementById('mobileProjectsList');
+      const mobileProjectsArrow = document.getElementById('mobileProjectsArrow');
+
+      if (mobileProjectsBtn && mobileProjectsList) {
+        mobileProjectsBtn.addEventListener('click', function () {
+          const isListHidden = mobileProjectsList.classList.toggle('hidden');
+          if (mobileProjectsArrow) {
+            mobileProjectsArrow.classList.toggle('rotate-180', !isListHidden);
+          }
+        });
+      }
+    });
+</script>

@@ -1,5 +1,8 @@
+@model GuardianAngel.Models.ContactForm
 @{
     ViewData["Title"] = "Contact";
+    const string fieldClass = "font-lato w-full px-4 py-3.5 rounded-xl border border-sky/70 bg-transparent text-sm text-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky/40 focus:border-sky transition-all";
+    const string errorClass = "font-lato block mt-1 text-xs text-red-600";
     ViewData["BodyClass"] = "font-cormorant text-navy bg-[#FAF4E6] antialiased";
 }
 
@@ -81,50 +84,50 @@
 
       <!-- Right Column: Contact Form -->
       <div class="lg:col-span-7" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
-        <form action="#" method="POST" class="space-y-4">
-          
+        <form id="contact-form" asp-controller="Home" asp-action="Contact" method="post" class="space-y-4 scroll-mt-28">
+
+          @if (TempData["ContactSuccess"] is string success)
+          {
+            <div class="font-lato flex items-start gap-3 rounded-xl border border-green-300 bg-green-50 px-4 py-3 text-sm text-green-800" role="status">
+              <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+              <span>@success</span>
+            </div>
+          }
+
           <!-- Name & Email Row -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <input 
-                type="text" 
-                name="name" 
-                placeholder="Name" 
-                required
-                class="font-lato w-full px-4 py-3.5 rounded-xl border border-sky/70 bg-transparent text-sm text-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky/40 focus:border-sky transition-all"
-              />
+              <input asp-for="Name" type="text" placeholder="Name" required class="@fieldClass" />
+              <span asp-validation-for="Name" class="@errorClass"></span>
             </div>
             <div>
-              <input 
-                type="email" 
-                name="email" 
-                placeholder="Email" 
-                required
-                class="font-lato w-full px-4 py-3.5 rounded-xl border border-sky/70 bg-transparent text-sm text-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky/40 focus:border-sky transition-all"
-              />
+              <input asp-for="Email" type="email" placeholder="Email" required class="@fieldClass" />
+              <span asp-validation-for="Email" class="@errorClass"></span>
             </div>
           </div>
 
           <!-- Subject Input -->
           <div>
-            <input 
-              type="text" 
-              name="subject" 
-              placeholder="Subject" 
-              required
-              class="font-lato w-full px-4 py-3.5 rounded-xl border border-sky/70 bg-transparent text-sm text-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky/40 focus:border-sky transition-all"
-            />
+            <input asp-for="Subject" type="text" placeholder="Subject" required class="@fieldClass" />
+            <span asp-validation-for="Subject" class="@errorClass"></span>
           </div>
 
           <!-- Message Textarea -->
           <div>
-            <textarea 
-              name="message" 
-              rows="6" 
-              placeholder="Message" 
-              required
-              class="font-lato w-full px-4 py-3.5 rounded-xl border border-sky/70 bg-transparent text-sm text-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-sky/40 focus:border-sky resize-none transition-all"
-            ></textarea>
+            <textarea asp-for="Message" rows="6" placeholder="Message" required class="@fieldClass resize-none"></textarea>
+            <span asp-validation-for="Message" class="@errorClass"></span>
+          </div>
+
+          <!-- Captcha -->
+          <div>
+            <div class="flex flex-wrap items-center gap-3">
+              <img id="captcha-img" src="/captcha" alt="Security code" width="180" height="56" class="rounded-xl border border-sky/70 bg-white" />
+              <button type="button" id="captcha-refresh" class="w-11 h-11 rounded-full border border-sky/70 flex items-center justify-center text-navy hover:bg-navy hover:text-white transition-colors" aria-label="Show a new code" title="Show a new code">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h5M20 20v-5h-5M5.6 15A7 7 0 0 0 18.4 17M18.4 9A7 7 0 0 0 5.6 7" /></svg>
+              </button>
+              <input id="Captcha" name="Captcha" type="text" value="" placeholder="Enter the code" required autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="5" class="@fieldClass flex-1 min-w-[10rem] uppercase tracking-[0.3em] placeholder:normal-case placeholder:tracking-normal" />
+            </div>
+            <span asp-validation-for="Captcha" class="@errorClass"></span>
           </div>
 
           <!-- Submit Button -->
@@ -147,3 +150,15 @@
 
   </div>
 </section>
+
+@section Scripts {
+<script>
+  // Load a fresh captcha image (the old code stops working)
+  document.getElementById('captcha-refresh').addEventListener('click', () => {
+    document.getElementById('captcha-img').src = '/captcha?t=' + Date.now();
+    const input = document.getElementById('Captcha');
+    input.value = '';
+    input.focus();
+  });
+</script>
+}
