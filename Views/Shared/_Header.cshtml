@@ -1,4 +1,4 @@
-<!-- ================= HEADER CUSTOM STYLES ================= -->
+ï»¿<!-- ================= HEADER CUSTOM STYLES ================= -->
 <style>
     /* Base Zero-Shift Styling */
     .nav-link {
@@ -82,14 +82,14 @@
                             </div>
                         </a>
 
-                        <!-- Item 2: Yeldho Mar Baselios Boy’s Home -->
+                        <!-- Item 2: Yeldho Mar Baselios Boyâ€™s Home -->
                         <a href="/project/yeldho-mar-baselios-boys-home" class="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group/item border border-transparent hover:border-gray-100">
                             <div class="w-12 h-12 rounded-lg overflow-hidden shrink-0 bg-slate-100 border border-gray-200">
-                                <img src="/images/Sunlit Pink Campus in Bloom.png" loading="lazy" alt="Yeldho Mar Baselios Boy’s Home" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
+                                <img src="/images/Sunlit Pink Campus in Bloom.png" loading="lazy" alt="Yeldho Mar Baselios Boyâ€™s Home" class="w-full h-full object-cover transition-transform duration-300 group-hover/item:scale-110" />
                             </div>
                             <div>
                                 <h5 class="text-xs lg:text-[13px] font-bold text-navy group-hover/item:text-sky transition-colors leading-snug">
-                                    Yeldho Mar Baselios Boy’s Home
+                                    Yeldho Mar Baselios Boyâ€™s Home
                                 </h5>
                                 <p class="text-[11px] text-gray-500 font-lato line-clamp-1">Child welfare &amp; education support</p>
                             </div>
@@ -234,7 +234,7 @@
 
             <div id="mobileProjectsList" class="hidden pl-3 pt-2.5 pb-1 space-y-2.5 text-xs font-semibold normal-case text-navy/70 border-l-2 border-sky/40 ml-1 mt-2">
                 <a href="/project/guardian-angel-retirement-home" class="block hover:text-sky">Guardian Angel Retirement Home</a>
-                <a href="/project/yeldho-mar-baselios-boys-home" class="block hover:text-sky">Yeldho Mar Baselios Boy’s Home</a>
+                <a href="/project/yeldho-mar-baselios-boys-home" class="block hover:text-sky">Yeldho Mar Baselios Boyâ€™s Home</a>
                 <a href="/project/bethsada-geriatric-destitute-home" class="block hover:text-sky">Bethsada Geriatric Destitute Home</a>
                 <a href="/project/bethesda-mental-health-center" class="block hover:text-sky">Bethesda Mental Health Center</a>
                 <a href="/project/bethsada-public-school" class="block hover:text-sky">Bethsada Public School</a>
@@ -290,14 +290,7 @@
         onScroll();
       }
 
-      // Mobile Hamburger Menu Toggle      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
-      if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', function () {
-          const isHidden = mobileMenu.classList.toggle('hidden');
-          menuBtn.setAttribute('aria-expanded', !isHidden);
-        });
-      }
+      // Mobile hamburger toggle is handled in /js/main.js (binding it here too made the menu open and close on the same click).
 
       // Mobile Projects Accordion Dropdown Toggle
       const mobileProjectsBtn = document.getElementById('mobileProjectsBtn');

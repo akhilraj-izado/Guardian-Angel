@@ -1,28 +1,22 @@
-@{
-    ViewData["Title"] = "Yeldho Mar Baselios Boyís Home";
+Ôªø@{
+    ViewData["Title"] = "Yeldho Mar Baselios Boy‚Äôs Home";
 }
 
 <!-- ================= YELDHO MAR BASELIOS BOY'S HOME HERO SECTION ================= -->
-<section class="relative bg-white min-h-[75vh] lg:min-h-[85vh] flex items-center overflow-hidden">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[85vh] flex items-center overflow-hidden">
 
-    <!-- Desktop / Tablet Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center lg:bg-right-bottom bg-no-repeat"
+    <!-- Background Image (all screen sizes; text sits on top of it) -->
+    <div class="absolute inset-0 bg-cover bg-center lg:bg-right-bottom bg-no-repeat"
          style="background-image: url('/images/Sunlit Pink Campus in Bloom.png');"
+         role="img" aria-label="Yeldho Mar Baselios Boy's Home, Kothamangalam"
          data-aos="fade-left"
          data-aos-duration="1200"></div>
 
-    <!-- Soft White & Sunlight Gradient Overlay for Smooth Text Readability -->
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/20 via-42% to-transparent pointer-events-none"></div>
-
-    <!-- Mobile Top Image -->
-    <div class="md:hidden w-full" data-aos="fade-down" data-aos-duration="800">
-        <img src="/images/Sunlit Pink Campus in Bloom.png"
-             alt="Yeldho Mar Baselios Boy's Home, Kothamangalam"
-             class="w-full h-auto object-cover max-h-[380px]" />
-    </div>
+    <!-- White Gradient Overlay for Text Readability (stronger on mobile where text spans full width) -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 md:from-white md:via-white/20 md:via-42% md:to-transparent pointer-events-none"></div>
 
     <!-- Main Content Container -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-24 lg:py-32 w-full z-10">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-16 md:py-24 lg:py-32 w-full z-10">
         <div class="w-full md:w-[56%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
 
             <!-- Main Heading in Cormorant Garamond Font -->
@@ -32,7 +26,7 @@
             </h1>
 
             <!-- Description Paragraph in Lato Font -->
-            <p class="font-lato text-xs sm:text-sm md:text-[15px] text-[#1E1E1E]/90 leading-relaxed max-w-xl text-justify sm:text-left">
+            <p class="font-lato text-sm md:text-[15px] text-[#1E1E1E]/90 leading-relaxed max-w-xl text-justify sm:text-left">
                 This activity goes on strongly for the last 25 years and so far more than 600 children have been nurtured well enough that most of them are now independently taking care of themselves and even their kith and kin.
             </p>
 
@@ -41,7 +35,7 @@
 
 </section>
 <!-- ================= OUR STORY SECTION (CHURCH HERITAGE) ================= -->
-<section class="relative bg-[#fbf9f4] bg-cover bg-left lg:bg-center bg-no-repeat py-16 sm:py-20 lg:py-28 overflow-hidden min-h-[580px] flex items-center"
+<section class="relative bg-[#fbf9f4] bg-cover bg-left lg:bg-center bg-no-repeat py-12 sm:py-20 lg:py-28 overflow-hidden lg:min-h-[580px] flex items-center"
          style="background-image: url('/images/Pastel Church Brochure with Sunrise Space.png');">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 w-full z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -59,13 +53,13 @@
                 </h2>
 
                 <!-- Description Paragraphs -->
-                <div class="font-lato space-y-3.5 text-[#1E1E1E]/90 text-xs sm:text-sm md:text-[14px] leading-relaxed text-justify sm:text-left">
+                <div class="font-lato space-y-3.5 text-[#1E1E1E]/90 text-sm md:text-[14px] leading-relaxed text-justify sm:text-left">
                     <p>
                         Yeldho Mar Baselios Boys Home, Kothamangalam, was established with the noble vision of providing care, protection, shelter, and education to underprivileged, orphaned, and socially disadvantaged boys. The institution was founded in response to the growing need for a safe and supportive environment where vulnerable children could receive proper care, guidance, and opportunities for a better future.
                     </p>
 
                     <p>
-                        From its very beginning, the Home has been sustained through the generous support, prayers, and contributions of kind-hearted people from both near and far, including church members, well-wishers, philanthropists, and members of the wider community whose compassion and commitment continue to strengthen its mission[cite: 38].
+                        From its very beginning, the Home has been sustained through the generous support, prayers, and contributions of kind-hearted people from both near and far, including church members, well-wishers, philanthropists, and members of the wider community whose compassion and commitment continue to strengthen its mission.
                     </p>
                 </div>
 
@@ -80,14 +74,14 @@
     <div class="absolute inset-0">
         <img src="/images/Sunlit Garden Reading Nook.png"
              alt=""
-             class="w-full h-full object-fill" />
+             class="w-full h-full object-cover lg:object-fill" />
     </div>
 
     <!-- Content -->
     <div class="relative z-10 w-full max-w-[1600px] mx-auto">
 
         <!-- Bible Verse -->
-        <div class="min-h-[285px] sm:min-h-[290px] lg:min-h-[300px]
+        <div class="min-h-[220px] sm:min-h-[290px] lg:min-h-[300px]
                 flex items-start justify-center text-center
                 px-5 pt-14 sm:pt-16 lg:pt-[65px]">
 
@@ -98,7 +92,7 @@
                 Start children off on the way they should go, and
                 <br class="hidden sm:block">
 
-                even when they are old they will not turn from itî.
+                even when they are old they will not turn from it‚Äù.
                 <br>
 
                 <span class="font-medium">{Proverbs 22:6}</span>
@@ -107,8 +101,10 @@
         </div>
 
         <!-- Main Content -->
-        <div class="px-6 sm:px-10 lg:px-[6.3%]
-                pt-2 sm:pt-3 pb-10 lg:pb-12">
+        <!-- Mobile/tablet: white card so the text is readable over the image -->
+        <div class="mx-4 sm:mx-6 lg:mx-0 mb-10 lg:mb-0 p-5 sm:p-8 lg:p-0 lg:px-[6.3%]
+                lg:pt-2 lg:pb-12 bg-white/85 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none
+                rounded-2xl lg:rounded-none shadow-sm lg:shadow-none">
 
             <!-- Section Heading -->
             <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold
@@ -120,7 +116,7 @@
 
             <!-- Description -->
             <div class="font-nunito text-[#5E788C]
-                  text-[11px] sm:text-[12px] lg:text-[12px]
+                  text-sm lg:text-[12px]
                   leading-[1.4] space-y-4 text-left">
 
                 <p>
@@ -171,21 +167,21 @@
                 </h2>
 
                 <!-- Description Paragraphs -->
-                <div class="font-lato space-y-4 text-xs sm:text-[13px] md:text-[13.5px] text-[#1E1E1E]/80 leading-relaxed text-justify sm:text-left">
+                <div class="font-lato space-y-4 text-sm md:text-[13.5px] text-[#1E1E1E]/80 leading-relaxed text-justify sm:text-left">
                     <p>
                         The Boys Home remains dedicated to creating a nurturing atmosphere where children are encouraged to grow into responsible, educated, and morally strong individuals. Safe accommodation and essential modern facilities are provided to ensure the comfort and well-being of the children. Along with formal school education, regular tuition classes and study support programs are conducted to strengthen their academic performance. Weekly library sessions encourage reading habits and help broaden the children's knowledge and creativity.
                     </p>
 
                     <p>
-                        Recognizing the importance of digital learning in today's world, the Home provides access to computers and mobile devices to support education and improve digital literacy[cite: 44]. Personality development programs, counseling sessions, and value-based guidance are also organized regularly to help children build confidence, discipline, and emotional well-being[cite: 44].
+                        Recognizing the importance of digital learning in today's world, the Home provides access to computers and mobile devices to support education and improve digital literacy. Personality development programs, counseling sessions, and value-based guidance are also organized regularly to help children build confidence, discipline, and emotional well-being.
                     </p>
 
                     <p>
-                        Spiritual and moral development remains an integral part of the institution's activities[cite: 44]. The children actively participate in classes and programs organized by Kothamangalam Valiyapally and are encouraged to take part in competitions, cultural events, and community activities[cite: 44]. The Home celebrates important national days, religious festivals, and special occasions with great enthusiasm, helping to create a joyful family atmosphere among the children[cite: 44]. Events such as Pravesanolsavam, Independence Day celebrations, Onam, Christmas, and birthday celebrations are observed with warmth and togetherness[cite: 44].
+                        Spiritual and moral development remains an integral part of the institution's activities. The children actively participate in classes and programs organized by Kothamangalam Valiyapally and are encouraged to take part in competitions, cultural events, and community activities. The Home celebrates important national days, religious festivals, and special occasions with great enthusiasm, helping to create a joyful family atmosphere among the children. Events such as Pravesanolsavam, Independence Day celebrations, Onam, Christmas, and birthday celebrations are observed with warmth and togetherness.
                     </p>
 
                     <p>
-                        In addition to academic and cultural activities, the institution promotes extracurricular participation and social interaction to ensure the overall development of the children[cite: 44]. Through these combined efforts, Yeldho Mar Baselios Boys Home continues to provide children with shelter, education, care, guidance, and opportunities for a brighter and more secure future[cite: 44].
+                        In addition to academic and cultural activities, the institution promotes extracurricular participation and social interaction to ensure the overall development of the children. Through these combined efforts, Yeldho Mar Baselios Boys Home continues to provide children with shelter, education, care, guidance, and opportunities for a brighter and more secure future.
                     </p>
                 </div>
 

@@ -3,24 +3,20 @@
 }
 
 <!-- ================= MAR GABRIEL PRAYER TOWER HERO SECTION ================= -->
-<section class="relative bg-white md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
 
-    <!-- Desktop / Tablet Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <!-- Background Image (all screen sizes; text sits on top of it) -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
          style="background-image: url('/images/mar-gabriel-prayer-tower-hero.png');"
+         role="img" aria-label="Hamara Auditorium campus, Vengola"
          data-aos="fade-in"
          data-aos-duration="1200"></div>
 
-    <!-- Soft light wash on the left so the heading stays readable over the sky -->
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white/50 via-white/15 to-transparent pointer-events-none"></div>
-
-    <!-- Mobile Top Image -->
-    <img src="/images/mar-gabriel-prayer-tower-hero.png"
-         alt="Mar Gabriel Prayer Tower and chapel, Vengola"
-         class="md:hidden w-full h-auto object-cover" />
+    <!-- White wash for readability: stronger on mobile (text spans full width), soft on the left for desktop -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-white/30 md:from-white/50 md:via-white/15 md:to-transparent pointer-events-none"></div>
 
     <!-- Main Content (sits in the upper-left, below the overlay header) -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-8 pb-12 md:pt-36 lg:pt-44 md:pb-24">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-20 sm:pt-16 sm:pb-24 md:pt-36 lg:pt-44 md:pb-24">
         <div class="w-full md:w-[55%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
 
             <h1 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold uppercase tracking-wide text-navy leading-[1.25]">

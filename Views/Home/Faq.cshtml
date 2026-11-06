@@ -3,21 +3,18 @@
 }
 
 <!-- ================= FAQ PAGE HERO SECTION (80VH) ================= -->
-<section class="relative bg-[#FAF5EE] overflow-hidden md:min-h-[80vh] flex flex-col justify-center md:min-h-[80vh] lg:min-h-[100vh]">
-  <div 
-    class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat"
+<section class="relative bg-[#FAF5EE] overflow-hidden pt-[68px] sm:pt-[76px] md:pt-0 flex flex-col justify-center md:min-h-[80vh] lg:min-h-[100vh]">
+  <!-- Background Image (all screen sizes; text sits on top of it) -->
+  <div
+    class="absolute inset-0 bg-cover bg-right bg-no-repeat"
     style="background-image: url('/images/faq-hero-bg.png');"
+    role="img" aria-label="Compassionate caregiver smiling with elderly resident"
   ></div>
 
-  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#FAF5EE] via-[#FAF5EE]/90 md:via-[#FAF5EE]/75 to-transparent"></div>
+  <!-- Cream overlay for readability: strong on mobile (text spans full width), left fade on desktop -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#FAF5EE]/95 via-[#FAF5EE]/80 to-[#FAF5EE]/40 md:from-[#FAF5EE] md:via-[#FAF5EE]/75 md:to-transparent"></div>
 
-  <img 
-    src="/images/faq-hero-bg.png" 
-    alt="Compassionate caregiver smiling with elderly resident" 
-    class="md:hidden w-full h-auto object-cover max-h-[340px]"
-  />
-
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-16 w-full flex items-center">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-16 w-full flex items-center">
     <div class="w-full md:w-[60%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900">
       <p class="font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.2em] text-navy">
         FAQ's
@@ -25,7 +22,7 @@
       <h1 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold uppercase tracking-wide text-navy leading-[1.2]">
         Frequently Asked<br />Questions
       </h1>
-      <p class="font-lato mt-5 text-xs sm:text-sm md:text-base leading-relaxed text-[#1E1E1E]/90 max-w-lg">
+      <p class="font-lato mt-5 text-sm md:text-base leading-relaxed text-[#1E1E1E]/90 max-w-lg">
         Find answers to common questions about our services, volunteering, donations, and how we care for those in need with compassion and dignity.
       </p>
     </div>

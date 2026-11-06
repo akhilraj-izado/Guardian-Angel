@@ -7,15 +7,17 @@
 }
 
   <!-- ================= HERO ================= -->
-  <section class="relative z-30 bg-white md:min-h-[75vh] lg:min-h-[90vh]">
-    <div class="hidden md:block absolute inset-0 bg-[url('/images/Sunlit-Modern-Campus-Courtyard.png')] bg-cover bg-left-bottom"></div>
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/90"></div>
+  <section class="relative z-30 bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[90vh]">
+    <!-- Banner wrapper: on mobile the background is limited to the text area (relative);
+         from md up it is static so the background covers the whole section as before. -->
+    <div class="relative md:static">
+    <div class="absolute inset-0 bg-[url('/images/Sunlit-Modern-Campus-Courtyard.png')] bg-cover bg-left-bottom"></div>
+    <!-- White overlay for readability: strong on mobile (text spans full width), right-side fade on desktop -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/80 to-white/60 md:from-transparent md:from-40% md:via-white/80 md:via-60% md:to-white/95"></div>
 
-    <img src="/images/hero.png" alt="A caregiver embracing an elderly woman" class="md:hidden w-full h-auto" />
-
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:pt-24 md:pb-28 lg:pt-32 lg:pb-36 flex md:justify-end">
-      <div class="w-full md:w-1/2 lg:w-[44%]" data-aos="fade-left" data-aos-duration="1000">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight">
+    <div class="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 pt-12 pb-12 sm:pt-14 sm:pb-14 md:pt-24 md:pb-28 lg:pt-32 lg:pb-36 flex md:justify-end">
+      <div class="w-full md:w-1/2 lg:w-[42%] xl:w-[38%]" data-aos="fade-left" data-aos-duration="1000">
+        <h1 class="text-[34px] sm:text-5xl lg:text-6xl font-semibold leading-tight">
           <span class="text-sky">Bringing</span> Hope,<br />
           Healing, <span class="text-sky">&amp;</span> Dignity<br />
           <span class="text-sky">to Humanity</span>
@@ -38,16 +40,17 @@
         </div>
       </div>
     </div>
+    </div>
 
     <!-- ================= STATS BAR ================= -->
-    <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-40 px-4 sm:px-6 lg:px-10">
+    <div class="relative md:absolute md:bottom-0 md:left-0 md:right-0 md:translate-y-1/2 z-40 px-4 sm:px-6 lg:px-10 pt-8 md:pt-0 pb-2 md:pb-0">
       <div 
         class="max-w-6xl mx-auto bg-navy text-white rounded-sm shadow-2xl border-4 border-sky/30"
         data-aos="fade-up" 
         data-aos-delay="200" 
         data-aos-duration="800"
       >
-        <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-white/20 py-4 lg:py-6">
+        <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x divide-white/20 py-4 lg:py-6">
           <li class="flex items-center gap-3 px-5 lg:px-6 py-3">
             <img src="/images/icon-calendar.png" alt="" class="w-8 h-8 object-contain shrink-0" />
             <div>
@@ -93,14 +96,28 @@
     <div class="hidden md:block absolute inset-0 bg-[url('/images/Bright-Clinical-Ward-with-Caring-Nurses.png')] bg-cover bg-right"></div>
     <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-24 sm:pt-28 md:pt-32 pb-16 md:pb-24 lg:pb-28">
+    <!-- Image with heading overlaid (mobile only) -->
+    <div class="md:hidden px-4 sm:px-6 pt-10 sm:pt-12" data-aos="fade-down" data-aos-duration="800">
+      <div class="relative rounded-2xl overflow-hidden shadow-md">
+        <img src="/images/Bright-Clinical-Ward-with-Caring-Nurses.png" alt="Nurses caring for patients in a bright clinical ward" class="w-full h-60 sm:h-80 object-cover object-right" />
+        <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 via-45% to-transparent pointer-events-none"></div>
+        <div class="absolute inset-y-0 left-0 w-3/5 flex flex-col justify-center pl-4 sm:pl-8 pr-2">
+          <p class="text-sm sm:text-lg font-semibold uppercase tracking-wider">
+            About <span class="text-sky">Us</span>
+          </p>
+          <h2 class="mt-1 text-2xl sm:text-4xl font-semibold uppercase leading-tight">Our Mission</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-8 sm:pt-10 md:pt-32 pb-12 md:pb-24 lg:pb-28">
       <div class="w-full md:w-[55%] lg:w-1/2" data-aos="fade-right" data-aos-duration="900">
-        <p class="text-base sm:text-lg font-semibold uppercase tracking-wider">
+        <p class="hidden md:block text-base sm:text-lg font-semibold uppercase tracking-wider">
           About <span class="text-sky">Us</span>
         </p>
-        <h2 class="mt-1 text-3xl sm:text-4xl font-semibold uppercase">Our Mission</h2>
+        <h2 class="hidden md:block mt-1 text-3xl sm:text-4xl font-semibold uppercase">Our Mission</h2>
 
-        <div class="font-lato mt-6 space-y-3 text-base sm:text-lg leading-relaxed">
+        <div class="font-lato md:mt-6 space-y-3 text-base sm:text-lg leading-relaxed">
           <p>
             We are committed to advancing inclusive and sustainable community development by serving orphaned children, the destitute, the elderly, the terminally ill, and individuals in need of mental healthcare.
           </p>
@@ -136,9 +153,6 @@ compassionate palliative and geriatric services, we create measurable social imp
         </ul>
       </div>
     </div>
-
-    <!-- Image (mobile) -->
-    <img src="/images/mission.png" alt="A volunteer holding hands with an elderly woman during a community meal" class="md:hidden w-full h-auto" />
   </section>
 
   <!-- ================= OUR MISSION GOALS ================= -->
@@ -233,12 +247,22 @@ compassionate palliative and geriatric services, we create measurable social imp
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
     
     <!-- Mobile & Tablet Image Container (Displays neatly on top for small screens) -->
-    <div class="lg:hidden mb-8 sm:mb-10" data-aos="fade-down" data-aos-duration="800">
-      <img 
-        src="images/Dignified Bishop with Golden Crozier.png" 
-        alt="His Grace Dr. Abraham Mor Severious Metropolitan" 
-        class="w-full h-auto max-h-[460px] object-cover object-right rounded-2xl shadow-md"
+    <div class="lg:hidden relative mb-8 sm:mb-10 rounded-2xl overflow-hidden shadow-md" data-aos="fade-down" data-aos-duration="800">
+      <img
+        src="images/Dignified Bishop with Golden Crozier.png"
+        alt="His Grace Dr. Abraham Mor Severious Metropolitan"
+        class="w-full h-72 sm:h-96 md:h-[460px] object-cover object-right"
       />
+      <!-- Heading overlaid on the light left side of the image (mobile & tablet) -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white/85 via-white/50 via-45% to-transparent pointer-events-none"></div>
+      <div class="absolute inset-y-0 left-0 w-[58%] sm:w-1/2 flex flex-col justify-center pl-4 sm:pl-8 pr-2">
+        <p class="text-xs sm:text-base font-semibold uppercase tracking-wider">
+          OUR <span class="text-sky">FOUNDER</span>
+        </p>
+        <h2 class="mt-1 font-cormorant text-lg sm:text-3xl md:text-4xl font-bold text-navy leading-[1.2]">
+          His Grace Dr. Abraham Mor Severious Metropolitan
+        </h2>
+      </div>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
@@ -248,17 +272,17 @@ compassionate palliative and geriatric services, we create measurable social imp
         
         <!-- Tagline / Subtitle -->
        
-<p class="text-base sm:text-lg font-semibold uppercase tracking-wider">
+<p class="hidden lg:block text-base sm:text-lg font-semibold uppercase tracking-wider">
           OUR <span class="text-sky">FOUNDER</span>
         </p>
-        <!-- Main Title -->
-        <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-navy leading-[1.2] mb-6">
+        <!-- Main Title (desktop only; mobile/tablet shows it on the image above) -->
+        <h2 class="hidden lg:block font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-navy leading-[1.2] mb-6">
           His Grace Dr. Abraham<br />
           Mor Severious Metropolitan
         </h2>
 
         <!-- Description Paragraphs matching the exact line splits and font styling -->
-        <div class="font-lato space-y-4 text-[#1E1E1E]/90 text-xs sm:text-sm md:text-[15px] leading-relaxed">
+        <div class="font-lato space-y-4 text-[#1E1E1E]/90 text-sm md:text-[15px] leading-relaxed">
           <p>
             His Grace Dr. Abraham Mor Severious Metropolitan was born on July 12, 1941, in Peechanikkad near Angamaly, Kerala.
           </p>
@@ -298,7 +322,7 @@ compassionate palliative and geriatric services, we create measurable social imp
       </h2>
 
       <!-- Description Paragraphs -->
-      <div class="font-lato space-y-3.5 text-[#1E1E1E]/90 text-xs sm:text-sm md:text-[15px] leading-relaxed">
+      <div class="font-lato space-y-3.5 text-[#1E1E1E]/90 text-sm md:text-[15px] leading-relaxed">
         <p>
           Guardian Angel Care Charitable Society began as a small charitable initiative inspired by compassion for the poor and suffering. Over nearly four decades, the Society has expanded into a multifaceted humanitarian organization serving thousands of individuals across Kerala.
         </p>
@@ -401,7 +425,7 @@ compassionate palliative and geriatric services, we create measurable social imp
       <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wider text-navy leading-tight mb-3">
         Our Institutions
       </h2>
-      <p class="font-lato text-xs sm:text-sm md:text-base text-[#1E1E1E]/90 leading-relaxed">
+      <p class="font-lato text-sm md:text-base text-[#1E1E1E]/90 leading-relaxed">
         Each institution reflects the Society's commitment to holistic care, education, healing, and empowerment.
       </p>
     </div>
@@ -426,7 +450,7 @@ compassionate palliative and geriatric services, we create measurable social imp
         </h3>
 
         <!-- Institutions List -->
-        <ol class="font-lato space-y-2 text-xs sm:text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
+        <ol class="font-lato space-y-2 text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
           <li>1. Guardian Angel Peace Mission Centre</li>
           <li>2. Bethsada Mental Hospital</li>
           <li>3. Peace Mission Health Care Institute</li>
@@ -452,7 +476,7 @@ compassionate palliative and geriatric services, we create measurable social imp
         </h3>
 
         <!-- Institutions List -->
-        <ol class="font-lato space-y-2 text-xs sm:text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
+        <ol class="font-lato space-y-2 text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
           <li>1. Bethsada Public School</li>
           <li>2. Bethsada Junior School</li>
           <li>3. Yeldho Mar Baselios Boys Home</li>
@@ -476,7 +500,7 @@ compassionate palliative and geriatric services, we create measurable social imp
         </h3>
 
         <!-- Institutions List -->
-        <ol class="font-lato space-y-2 text-xs sm:text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
+        <ol class="font-lato space-y-2 text-sm text-[#1E1E1E]/90 leading-relaxed list-none pl-0">
           <li>1. The Hermits</li>
           <li>2. Bethsada Magazine</li>
           <li>3. Hamara Auditorium</li>
@@ -503,11 +527,11 @@ compassionate palliative and geriatric services, we create measurable social imp
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
         <!-- Service 1 -->
-        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
-          <div class="sm:w-1/2 h-56 sm:h-auto shrink-0">
+        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row md:flex-col lg:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="100">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 h-56 sm:h-auto md:h-56 lg:h-auto shrink-0">
                     <img src="/images/Compassionate Care in the Hospital Ward.png" alt="Healthcare & Rehabilitation" class="w-full h-full object-cover" />
           </div>
-          <div class="sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 p-5 sm:p-7 flex flex-col justify-center">
             <h3 class="text-xl sm:text-2xl font-bold text-navy">
               Healthcare &amp; Rehabilitation
             </h3>
@@ -518,11 +542,11 @@ compassionate palliative and geriatric services, we create measurable social imp
         </div>
 
         <!-- Service 2 -->
-        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
-          <div class="sm:w-1/2 h-56 sm:h-auto shrink-0">
+        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row md:flex-col lg:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="200">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 h-56 sm:h-auto md:h-56 lg:h-auto shrink-0">
                     <img src="/images/Golden-Hour Garden Caregiving Moment.png" alt="Elderly & Palliative Care" class="w-full h-full object-cover" />
           </div>
-          <div class="sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 p-5 sm:p-7 flex flex-col justify-center">
             <h3 class="text-xl sm:text-2xl font-bold text-navy">
               Elderly &amp; Palliative Care
             </h3>
@@ -533,11 +557,11 @@ compassionate palliative and geriatric services, we create measurable social imp
         </div>
 
         <!-- Service 3 -->
-        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
-          <div class="sm:w-1/2 h-56 sm:h-auto shrink-0">
+        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row md:flex-col lg:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="300">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 h-56 sm:h-auto md:h-56 lg:h-auto shrink-0">
             <img src="/images/img-service-3.png" alt="Education & Scholarships" class="w-full h-full object-cover" />
           </div>
-          <div class="sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 p-5 sm:p-7 flex flex-col justify-center">
             <h3 class="text-xl sm:text-2xl font-bold text-navy">
               Education &amp; Scholarships
             </h3>
@@ -548,11 +572,11 @@ compassionate palliative and geriatric services, we create measurable social imp
         </div>
 
         <!-- Service 4 -->
-        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="400">
-          <div class="sm:w-1/2 h-56 sm:h-auto shrink-0">
+        <div class="bg-white rounded-xl shadow-[0_4px_25px_rgba(0,0,0,0.06)] overflow-hidden flex flex-col sm:flex-row md:flex-col lg:flex-row hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay="400">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 h-56 sm:h-auto md:h-56 lg:h-auto shrink-0">
             <img src="/images/img-service-4.png" alt="Social Empowerment Programs" class="w-full h-full object-cover" />
           </div>
-          <div class="sm:w-1/2 p-6 sm:p-7 flex flex-col justify-center">
+          <div class="sm:w-1/2 md:w-full lg:w-1/2 p-5 sm:p-7 flex flex-col justify-center">
             <h3 class="text-xl sm:text-2xl font-bold text-navy">
               Social Empowerment Programs
             </h3>
@@ -573,7 +597,8 @@ compassionate palliative and geriatric services, we create measurable social imp
       style="background-image: url('/images/Frame 20561.png');"
     ></div>
 
-    <div class="absolute inset-0 bg-gradient-to-r from-[#205fa6] via-[#205fa6]/90 to-transparent md:via-[#205fa6]/70"></div>
+    <div class="md:hidden absolute inset-0 bg-[#205fa6]/90"></div>
+    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#205fa6] via-[#205fa6]/70 to-transparent"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16 md:py-24 lg:py-28 flex items-center">
       <div class="w-full md:w-3/5 lg:w-1/2" data-aos="fade-up" data-aos-delay="150">
@@ -595,7 +620,7 @@ compassionate palliative and geriatric services, we create measurable social imp
 
           <a 
             href="#" 
-            class="inline-flex items-center justify-center rounded-full border border-navy/80 bg-navy/20 text-navy px-7 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-navy hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
+            class="inline-flex items-center justify-center rounded-full border border-white md:border-navy/80 bg-transparent md:bg-navy/20 text-white md:text-navy px-7 py-3 text-xs sm:text-sm font-bold uppercase tracking-wider hover:bg-navy hover:text-white transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy"
           >
             Become a Member
           </a>
@@ -634,107 +659,125 @@ compassionate palliative and geriatric services, we create measurable social imp
       </div>
 
       <!-- Swiper Slider Container -->
-      <div class="swiper testimonialSwiper pb-12">
+      <div class="swiper testimonialSwiper !pb-12">
         <div class="swiper-wrapper font-lato">
 
-          <!-- Slide 1 -->
-          <div class="swiper-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">The love and care I received during difficult times brought me comfort and peace. Guardian Angel became a family when I needed one most.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Sarah L" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Sarah L</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Their support helped me rebuild my life with dignity and hope. I am deeply grateful for the kindness and encouragement I received.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80" alt="Emily R" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Emily R</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">The compassion shown to my elderly mother gave our family strength and reassurance. We will always cherish their selfless service.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Michael K" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Michael K</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Through education and vocational support, I gained confidence and a brighter future. Guardian Angel truly changed the course of my life.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80" alt="Jason M" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Jason M</span>
-                </div>
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">The love and care I received during difficult times brought me comfort and peace. Guardian Angel became a family when I needed one most.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" alt="Sarah L" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Sarah L</span>
               </div>
             </div>
           </div>
 
-          <!-- Slide 2 -->
-          <div class="swiper-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">The healthcare facilities and compassionate nurses gave me new life when I had lost all hope. I am forever grateful for their guidance.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80" alt="Anna S" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Anna S</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Their rehabilitation programs helped my brother recover completely. Today he works and supports himself independently.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80" alt="David P" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">David P</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Receiving regular educational sponsorship meant my children could continue their studies without interruptions or fear.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80" alt="Grace T" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Grace T</span>
-                </div>
-              </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Being a part of their community training initiatives opened doors to earning an honest living. It changed our future completely.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80" alt="Robert N" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Robert N</span>
-                </div>
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Their support helped me rebuild my life with dignity and hope. I am deeply grateful for the kindness and encouragement I received.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&auto=format&fit=crop&q=80" alt="Emily R" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Emily R</span>
               </div>
             </div>
           </div>
 
-          <!-- Slide 3 -->
-          <div class="swiper-slide">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">The warmth and unconditional love shown by the volunteers made me feel valued again. Truly a blessing to humanity.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80" alt="Rebecca W" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Rebecca W</span>
-                </div>
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">The compassion shown to my elderly mother gave our family strength and reassurance. We will always cherish their selfless service.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="Michael K" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Michael K</span>
               </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">They gave shelter and nutritional food to senior citizens who had nowhere else to turn. Such selflessness is rare today.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80" alt="Daniel C" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Daniel C</span>
-                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Through education and vocational support, I gained confidence and a brighter future. Guardian Angel truly changed the course of my life.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80" alt="Jason M" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Jason M</span>
               </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">Their mental health counseling and emotional support provided the strength I needed to face life with confidence and peace.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&auto=format&fit=crop&q=80" alt="Sophia M" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Sophia M</span>
-                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">The healthcare facilities and compassionate nurses gave me new life when I had lost all hope. I am forever grateful for their guidance.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&auto=format&fit=crop&q=80" alt="Anna S" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Anna S</span>
               </div>
-              <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] overflow-hidden flex flex-col justify-between border border-gray-100">
-                <div class="p-7 sm:p-9"><p class="text-base sm:text-lg leading-relaxed text-gray-700">The vocational training programs helped several youth in our neighborhood secure meaningful livelihood opportunities.</p></div>
-                <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
-                  <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&auto=format&fit=crop&q=80" alt="Kevin D" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
-                  <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Kevin D</span>
-                </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Their rehabilitation programs helped my brother recover completely. Today he works and supports himself independently.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=120&auto=format&fit=crop&q=80" alt="David P" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">David P</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Receiving regular educational sponsorship meant my children could continue their studies without interruptions or fear.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80" alt="Grace T" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Grace T</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Being a part of their community training initiatives opened doors to earning an honest living. It changed our future completely.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=120&auto=format&fit=crop&q=80" alt="Robert N" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Robert N</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">The warmth and unconditional love shown by the volunteers made me feel valued again. Truly a blessing to humanity.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&auto=format&fit=crop&q=80" alt="Rebecca W" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Rebecca W</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">They gave shelter and nutritional food to senior citizens who had nowhere else to turn. Such selflessness is rare today.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&auto=format&fit=crop&q=80" alt="Daniel C" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Daniel C</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">Their mental health counseling and emotional support provided the strength I needed to face life with confidence and peace.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=120&auto=format&fit=crop&q=80" alt="Sophia M" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Sophia M</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !h-auto">
+            <div class="bg-white rounded-2xl shadow-[0_4px_25px_rgba(0,0,0,0.07)] h-full overflow-hidden flex flex-col justify-between border border-gray-100">
+              <div class="p-6 sm:p-9"><p class="text-[15px] sm:text-lg leading-relaxed text-gray-700">The vocational training programs helped several youth in our neighborhood secure meaningful livelihood opportunities.</p></div>
+              <div class="bg-[#76B2E1] px-6 sm:px-8 py-3.5 flex items-center gap-4">
+                <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&auto=format&fit=crop&q=80" alt="Kevin D" class="w-12 h-12 rounded-xl object-cover border-2 border-white/60 shadow-sm" />
+                <span class="text-navy font-bold text-base sm:text-lg tracking-wide">Kevin D</span>
               </div>
             </div>
           </div>
@@ -753,10 +796,27 @@ compassionate palliative and geriatric services, we create measurable social imp
 
 <script>
     // Initialize Swiper
+    // Mobile: one testimonial per slide. Tablet/desktop: 2x2 grid (4 per page).
+    // Swiper's grid mode does not support loop, so rewind is used to cycle back to the start.
     const testimonialSwiper = new Swiper('.testimonialSwiper', {
       slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
+      slidesPerGroup: 1,
+      spaceBetween: 16,
+      rewind: true,
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 24,
+          grid: { rows: 2, fill: 'row' },
+        },
+        1024: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 32,
+          grid: { rows: 2, fill: 'row' },
+        },
+      },
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,

@@ -1,28 +1,22 @@
-@{
+Ôªø@{
     ViewData["Title"] = "Bethesda Mental Health Center";
 }
 
 <!-- ================= BETHESDA MENTAL HEALTH CENTER HERO SECTION ================= -->
-<section class="relative bg-white min-h-[75vh] lg:min-h-[85vh] flex items-center overflow-hidden">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[85vh] flex items-center overflow-hidden">
 
-    <!-- Desktop / Tablet Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center lg:bg-right-bottom bg-no-repeat"
+    <!-- Background Image (all screen sizes; text sits on top of it) -->
+    <div class="absolute inset-0 bg-cover bg-center lg:bg-right-bottom bg-no-repeat"
          style="background-image: url('/images/Sunlit Green Courtyard Architecture.png');"
+         role="img" aria-label="Bethesda Mental Health Center, Vengola"
          data-aos="fade-left"
          data-aos-duration="1200"></div>
 
-    <!-- Soft White & Sunlight Gradient Overlay for Seamless Text Readability -->
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/20 via-42% to-transparent pointer-events-none"></div>
-
-    <!-- Mobile Top Image -->
-    <div class="md:hidden w-full" data-aos="fade-down" data-aos-duration="800">
-        <img src="/images/Sunlit Green Courtyard Architecture.png"
-             alt="Bethesda Mental Health Center, Vengola"
-             class="w-full h-auto object-cover max-h-[380px]" />
-    </div>
+    <!-- White Gradient Overlay: strong on mobile (text spans full width); on desktop white only behind the text, then fades out -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 md:from-white/95 md:from-20% md:via-white/75 md:via-45% md:to-transparent md:to-60% pointer-events-none"></div>
 
     <!-- Main Content Container -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-24 lg:py-32 w-full z-10">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-14 sm:py-16 md:py-24 lg:py-32 w-full z-10">
         <div class="w-full md:w-[56%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
 
             <!-- Main Heading in Cormorant Garamond Font -->
@@ -32,7 +26,7 @@
             </h1>
 
             <!-- Description Paragraph in Lato Font -->
-            <p class="font-lato text-xs sm:text-sm md:text-[14.5px] text-[#1E1E1E]/90 leading-relaxed max-w-xl text-justify sm:text-left">
+            <p class="font-lato text-sm md:text-[14.5px] text-[#1E1E1E]/90 leading-relaxed max-w-xl text-left">
                 Established in 1992, Bethsada Mental Hospital has been serving as a center of compassionate and professional mental healthcare for individuals and families across the community. Founded in response to the growing need for accessible and humane psychiatric care, the institution was created with a vision to restore dignity, hope, and well-being to people experiencing mental health challenges.
             </p>
 
@@ -52,9 +46,9 @@
                 <h2 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold text-navy leading-tight mb-5">
                     Clinical Services
                 </h2>
-                <div class="font-lato space-y-4 text-xs sm:text-[13px] md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
+                <div class="font-lato space-y-4 text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
                     <p>
-                        Bethsada Mental Hospital provides comprehensive psychiatric and psychological care through outpatient and inpatient services[cite: 35]. The hospital offers expert diagnosis, psychiatric consultations, psychological assessments, counselling, crisis intervention, and continuous inpatient care for individuals with various mental health conditions.
+                        Bethsada Mental Hospital provides comprehensive psychiatric and psychological care through outpatient and inpatient services. The hospital offers expert diagnosis, psychiatric consultations, psychological assessments, counselling, crisis intervention, and continuous inpatient care for individuals with various mental health conditions.
                     </p>
                     <p>
                         The <strong class="text-navy font-semibold">multidisciplinary team</strong> includes psychiatrists, clinical psychologists, psychiatric social workers, nurses, rehabilitation therapists, administrative staff, and support personnel who work together to ensure patient-centered care and recovery.
@@ -93,24 +87,24 @@
                     Rehabilitation and Recovery Programs
                 </h2>
 
-                <div class="font-lato space-y-3.5 text-xs sm:text-[13px] md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
+                <div class="font-lato space-y-3.5 text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
                     <p>
-                        Rehabilitation is a core component of the hospital's treatment philosophy[cite: 35]. The institution focuses on helping patients regain independence, confidence, and social functioning through individualized rehabilitation programs.
+                        Rehabilitation is a core component of the hospital's treatment philosophy. The institution focuses on helping patients regain independence, confidence, and social functioning through individualized rehabilitation programs.
                     </p>
 
                     <p class="font-semibold text-navy pt-1">
-                        Key rehabilitation services include:[cite: 35]
+                        Key rehabilitation services include:
                     </p>
-                    <ul class="space-y-1.5 pl-4 text-xs sm:text-[13px] md:text-[13.5px] list-disc list-outside text-[#1E1E1E]/85">
-                        <li>Symptom management and therapeutic support for severe mental disorders[cite: 35]</li>
-                        <li>Personal care training and motivation for self-reliance[cite: 35]</li>
-                        <li>Family counselling and psycho-education[cite: 35]</li>
-                        <li>Social skills development and activity-based interventions[cite: 35]</li>
-                        <li>Vocational guidance and rehabilitation support[cite: 35]</li>
+                    <ul class="space-y-1.5 pl-4 text-sm md:text-[13.5px] list-disc list-outside text-[#1E1E1E]/85">
+                        <li>Symptom management and therapeutic support for severe mental disorders</li>
+                        <li>Personal care training and motivation for self-reliance</li>
+                        <li>Family counselling and psycho-education</li>
+                        <li>Social skills development and activity-based interventions</li>
+                        <li>Vocational guidance and rehabilitation support</li>
                     </ul>
 
                     <p class="pt-1">
-                        The hospital also provides specialized geriatric and dementia care services, incorporating psychosocial interventions such as reality orientation therapy, reminiscence therapy, validation therapy, group activities, and stimulation-based programs to improve quality of life[cite: 35].
+                        The hospital also provides specialized geriatric and dementia care services, incorporating psychosocial interventions such as reality orientation therapy, reminiscence therapy, validation therapy, group activities, and stimulation-based programs to improve quality of life.
                     </p>
                 </div>
             </div>
@@ -128,16 +122,16 @@
                     Mental Health Awareness<br />and Community Outreach
                 </h2>
 
-                <div class="font-lato space-y-4 text-xs sm:text-[13px] md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
+                <div class="font-lato space-y-4 text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed text-justify sm:text-left">
                     <p>
-                        Promoting awareness and reducing stigma remain central to the mission of Bethsada Mental Hospital[cite: 35]. The institution regularly organizes mental health awareness programs, seminars, workshops, cultural events, poster presentations, quizzes, and community outreach initiatives in observance of important mental health awareness days, including:
+                        Promoting awareness and reducing stigma remain central to the mission of Bethsada Mental Hospital. The institution regularly organizes mental health awareness programs, seminars, workshops, cultural events, poster presentations, quizzes, and community outreach initiatives in observance of important mental health awareness days, including:
                     </p>
 
-                    <ul class="space-y-1.5 pl-4 text-xs sm:text-[13px] md:text-[13.5px] list-disc list-outside text-[#1E1E1E]/85">
-                        <li>World Autism Awareness Day[cite: 35]</li>
-                        <li>World Schizophrenia Awareness Day[cite: 35]</li>
-                        <li>World Alzheimer's Day[cite: 35]</li>
-                        <li>World Mental Health Day[cite: 35]</li>
+                    <ul class="space-y-1.5 pl-4 text-sm md:text-[13.5px] list-disc list-outside text-[#1E1E1E]/85">
+                        <li>World Autism Awareness Day</li>
+                        <li>World Schizophrenia Awareness Day</li>
+                        <li>World Alzheimer's Day</li>
+                        <li>World Mental Health Day</li>
                     </ul>
                 </div>
             </div>
@@ -175,9 +169,9 @@
             <p class="font-cormorant font-medium
                 text-[21px] sm:text-[27px] lg:text-[38px]
                 leading-[1.2]">
-                ìAt sunset, the people brought to Jesus all who had
+                ‚ÄúAt sunset, the people brought to Jesus all who had
                 various kinds of sickness, and laying his hands on
-                each one, he healed themî.
+                each one, he healed them‚Äù.
             </p>
 
             <p class="font-cormorant font-medium
@@ -218,7 +212,7 @@
 
             </h2>
 
-            <div class="font-nunito text-[#607D98]
+            <div class="font-nunito text-[#1E1E1E]/85
                   text-sm sm:text-base lg:text-[17px]
                   leading-[1.4] space-y-5">
 

@@ -7,26 +7,23 @@
 }
 
 <!-- ================= ABOUT PAGE HERO SECTION ================= -->
-<section class="relative z-30 bg-[#FAF6ED] mb-24 sm:mb-28 lg:mb-32 overflow-visible md:min-h-[75vh] lg:min-h-[88vh]">
+<section class="relative z-30 bg-[#FAF6ED] pt-[68px] sm:pt-[76px] md:pt-0 lg:mb-32 overflow-visible md:min-h-[75vh] lg:min-h-[88vh]">
   
-  <!-- Desktop Background Image (Right Aligned) -->
-  <div 
-    class="hidden md:block absolute inset-0 bg-cover bg-no-repeat bg-right"
+  <!-- Banner wrapper: on mobile the background is limited to the text area (relative);
+       from md up it is static so the background covers the whole section as before. -->
+  <div class="relative md:static">
+
+  <!-- Background Image (Right Aligned) -->
+  <div
+    class="absolute inset-0 bg-cover bg-no-repeat bg-right"
     style="background-image: url('/images/about-hero-bg.png');"
   ></div>
-  
-  <!-- Soft Gradient Overlay for Text Readability -->
-  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-[#FAF6ED] via-[#FAF6ED]/85 to-transparent"></div>
 
-  <!-- Mobile Top Image -->
-  <img 
-    src="/images/about-hero-bg.png" 
-    alt="Caregiver smiling with elderly woman" 
-    class="md:hidden w-full h-auto object-cover"
-  />
+  <!-- Soft Gradient Overlay for Text Readability (stronger on mobile where text spans full width) -->
+  <div class="absolute inset-0 bg-gradient-to-r from-[#FAF6ED]/95 via-[#FAF6ED]/80 to-[#FAF6ED]/30 md:from-[#FAF6ED] md:via-[#FAF6ED]/85 md:to-transparent"></div>
 
   <!-- Main Hero Content -->
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-10 pb-28 sm:pb-36 md:py-16 md:pb-24 lg:pb-28 md:min-h-[75vh] lg:min-h-[88vh] flex items-center">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-14 sm:pt-16 sm:pb-16 md:py-16 lg:pb-28 md:min-h-[60vh] lg:min-h-[88vh] flex items-center">
     <div class="w-full md:w-[60%] lg:w-[50%]" data-aos="fade-right" data-aos-duration="900">
       
       <!-- Small Category Tag -->
@@ -35,7 +32,7 @@
       </p>
 
       <!-- Main Heading -->
-      <h1 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold uppercase tracking-wide text-navy leading-[1.15] whitespace-nowrap">
+      <h1 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold uppercase tracking-wide text-navy leading-[1.15] xl:whitespace-nowrap">
         Our Story (History &amp; Founding)
       </h1>
 
@@ -52,8 +49,11 @@
     </div>
   </div>
 
+  </div>
+
   <!-- ================= FLOATING FEATURE BAR ================= -->
-  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-40 px-4 sm:px-6 lg:px-10 pointer-events-none">
+  <!-- Mobile/tablet: sits in normal flow below the text. Desktop: floats half over the next section. -->
+  <div class="relative lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 z-40 px-4 sm:px-6 lg:px-10 pt-8 md:pt-0 pb-12 sm:pb-14 lg:pb-0 pointer-events-none">
     <div 
       class="max-w-6xl mx-auto bg-white rounded-[26px] sm:rounded-3xl shadow-[0_10px_35px_rgba(0,0,0,0.06)] border border-[#76B2E1]/40 py-5 sm:py-6 px-3 sm:px-6 pointer-events-auto"
       data-aos="fade-up"
@@ -62,7 +62,7 @@
     >
       
       <!-- Grid with Sky Blue Vertical Dividers -->
-      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-[#76B2E1]/60">
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-2 lg:gap-y-0 lg:divide-x divide-[#76B2E1]/60">
         
         <!-- Item 1: Palliative Care -->
         <li class="flex flex-col items-center justify-center text-center p-3 sm:px-3">
@@ -137,7 +137,7 @@
           Our Mission:
         </h3>
         
-        <div class="font-lato mt-4 text-xs sm:text-[13.5px] leading-relaxed text-[#1E1E1E]/90 space-y-3">
+        <div class="font-lato mt-4 text-sm sm:text-[13.5px] leading-relaxed text-[#1E1E1E]/90 space-y-3">
           <p>
             We are committed to advancing inclusive and sustainable community development by serving orphaned children, the destitute, the elderly, the terminally ill, and individuals in need of mental healthcare.
           </p>
@@ -194,7 +194,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
               Compassion
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-gray-200">
               We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
             </p>
           </div>
@@ -207,7 +207,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
               Inclusivity
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-navy/90 font-medium">
               We embrace diversity and create welcoming environments where all people feel valued and supported.
             </p>
           </div>
@@ -220,7 +220,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
               Unconditional Love
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-gray-200">
               We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
             </p>
           </div>
@@ -233,7 +233,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
               Empowerment
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-navy/90 font-medium">
               We help individuals achieve their fullest potential through education, support, and opportunity.
             </p>
           </div>
@@ -246,7 +246,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
               Integrity
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-gray-200">
               We demonstrate empathy and kindness toward every individual while recognizing their inherent worth and dignity.
             </p>
           </div>
@@ -259,7 +259,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
               Hope &amp; Healing
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-navy/90 font-medium">
               Restoring faith, physical wellbeing, and emotional comfort to the suffering through comprehensive palliative care.
             </p>
           </div>
@@ -272,7 +272,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-white">
               Social Justice
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-gray-200">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-gray-200">
               Advocating for the rights and equitable treatment of destitute children, the elderly, and marginalized communities.
             </p>
           </div>
@@ -285,7 +285,7 @@
             <h3 class="font-cormorant text-xl sm:text-2xl font-bold uppercase tracking-wider text-navy">
               Excellence
             </h3>
-            <p class="font-lato mt-4 text-xs sm:text-sm leading-relaxed text-navy/90 font-medium">
+            <p class="font-lato mt-4 text-sm leading-relaxed text-navy/90 font-medium">
               Upholding the highest standards of professional and compassionate assistance in every rehabilitation initiative.
             </p>
           </div>
@@ -386,7 +386,7 @@
 
 <!-- ================= OUR PARTNERS & COLLABORATORS SECTION ================= -->
 <section class="relative bg-white overflow-hidden">
-  <div class="relative min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] flex items-center">
+  <div class="relative md:min-h-[420px] lg:min-h-[460px] flex flex-col md:flex-row md:items-center">
     <div 
       class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat"
       style="background-image: url('/images/partners-bg.png');"
@@ -396,8 +396,8 @@
 
     <img 
       src="/images/partners-bg.png" 
-      alt="Hands stacked together in partnership" 
-      class="md:hidden w-full h-auto object-cover"
+      alt="Hands stacked together in partnership"
+      class="md:hidden w-full h-56 sm:h-72 object-cover object-right"
     />
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 md:py-16 w-full">
@@ -406,7 +406,7 @@
           Our Partners &amp; Collaborators
         </h2>
 
-        <div class="font-lato mt-4 sm:mt-5 space-y-4 text-[#1E1E1E] text-xs sm:text-sm md:text-[15px] leading-relaxed">
+        <div class="font-lato mt-4 sm:mt-5 space-y-4 text-[#1E1E1E] text-sm md:text-[15px] leading-relaxed">
           <p>
             The Society welcomes Donors and benefactors, Volunteers, CSR partnerships, Healthcare collaborations, Educational partnerships, Community support initiatives.
           </p>
@@ -421,7 +421,7 @@
   <!-- BOTTOM STATS BAR -->
   <div class="bg-navy text-white py-6 md:py-8 border-t border-navy/20" data-aos="fade-in" data-aos-duration="800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 divide-y sm:divide-y-0 sm:divide-x divide-sky/40 text-left">
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:divide-x divide-sky/40 text-left">
         <li class="flex items-center gap-3.5 px-3 sm:px-5 lg:px-6 py-3" data-aos="fade-up" data-aos-delay="100">
           <img src="/images/icon-calendar-stat.png" alt="Years of Service" class="w-8 h-8 sm:w-9 sm:h-9 object-contain shrink-0" />
           <div>
@@ -469,25 +469,34 @@
     style="background-image: url('/images/why-work-matters-bg.png');"
   ></div>
 
-  <div class="lg:hidden w-full">
-    <img 
-      src="/images/why-work-matters-bg.png" 
-      alt="Hands holding a growing plant" 
-      class="w-full h-auto object-cover max-h-[350px]"
+  <div class="lg:hidden relative w-full">
+    <img
+      src="/images/why-work-matters-bg.png"
+      alt="Hands holding a growing plant"
+      class="w-full h-auto max-h-[350px] object-cover object-left"
     />
+    <!-- Heading overlaid on the empty cream right side of the image (mobile & tablet) -->
+    <div class="absolute inset-y-0 right-0 w-[48%] flex flex-col justify-center pr-4 sm:pr-8 pl-2">
+      <p class="font-cormorant text-xs sm:text-base font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-sky">
+        What We Do
+      </p>
+      <h2 class="font-cormorant mt-1 sm:mt-2 text-xl sm:text-3xl md:text-4xl font-bold uppercase tracking-wide text-navy leading-tight">
+        Why Our Work Matters
+      </h2>
+    </div>
   </div>
 
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 md:py-16 lg:py-24 flex lg:justify-end">
     <div class="w-full lg:w-[48%] xl:w-[44%] lg:ml-auto flex flex-col justify-center" data-aos="fade-left" data-aos-duration="900">
-      <p class="font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-sky">
+      <p class="hidden lg:block font-cormorant text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-sky">
         What We Do
       </p>
 
-      <h2 class="font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold uppercase tracking-wide text-navy leading-tight">
+      <h2 class="hidden lg:block font-cormorant mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-bold uppercase tracking-wide text-navy leading-tight">
         Why Our Work Matters
       </h2>
 
-      <p class="font-lato mt-4 text-xs sm:text-sm md:text-base leading-relaxed text-[#1E1E1E]/90 max-w-lg">
+      <p class="font-lato lg:mt-4 text-sm md:text-base leading-relaxed text-[#1E1E1E]/90 max-w-lg">
         For nearly four decades, Guardian Angel Care Charitable Society has provided hope and support to vulnerable individuals and families.
       </p>
 
@@ -538,7 +547,7 @@
         </div>
       </div>
 
-      <p class="font-lato font-bold text-xs sm:text-sm md:text-base leading-relaxed text-[#1E1E1E] max-w-lg">
+      <p class="font-lato font-bold text-sm md:text-base leading-relaxed text-[#1E1E1E] max-w-lg">
         Our institutions continue to touch countless lives through dedicated service rooted in faith and humanity.
       </p>
     </div>

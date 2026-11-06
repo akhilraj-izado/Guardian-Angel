@@ -3,24 +3,20 @@
 }
 
 <!-- ================= THE HERMITS HERO SECTION ================= -->
-<section class="relative bg-white md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
 
-    <!-- Desktop / Tablet Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-top bg-no-repeat"
+    <!-- Background Image (all screen sizes; text sits on top of it) -->
+    <div class="absolute inset-0 bg-cover bg-top bg-no-repeat"
          style="background-image: url('/images/hermits-hero.png');"
+         role="img" aria-label="Entrance gate of The Hermits, Kolpara, Illithode"
          data-aos="fade-in"
          data-aos-duration="1200"></div>
 
-    <!-- Soft light wash on the right so the heading stays readable over the sky -->
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-l from-white/50 via-white/15 to-transparent pointer-events-none"></div>
-
-    <!-- Mobile Top Image -->
-    <img src="/images/hermits-hero.png"
-         alt="Entrance gate of The Hermits, Kolpara, Illithode"
-         class="md:hidden w-full h-auto object-cover" />
+    <!-- White Gradient Overlay: mobile only (text spans full width over the image). No white on tablet/desktop. -->
+    <div class="md:hidden absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 pointer-events-none"></div>
 
     <!-- Main Content (sits in the upper-right, below the overlay header) -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-8 pb-12 md:pt-36 lg:pt-44 md:pb-24 flex md:justify-end">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-20 sm:pt-16 sm:pb-24 md:pt-36 lg:pt-44 md:pb-24 flex md:justify-end">
         <div class="w-full md:w-[45%] lg:w-[40%]" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
 
             <h1 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold uppercase tracking-wide text-navy leading-[1.25]">
@@ -29,7 +25,7 @@
                 Spiritual Renewal
             </h1>
 
-            <p class="font-lato mt-4 md:mt-5 text-sm sm:text-[15px] md:text-base text-[#4A5568] leading-relaxed max-w-xl">
+            <p class="font-lato mt-4 md:mt-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/90 leading-relaxed max-w-xl">
                 Nestled atop the serene hills of Illithode, The Hermits is the newest initiative of the Guardian Angel Care Charitable Society, envisioned as a sacred space for meditation, prayer, and spiritual renewal.
             </p>
 
@@ -50,7 +46,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[40px] font-semibold text-navy leading-tight mb-5">
                     A Sanctuary in Harmony with Nature
                 </h2>
-                <p class="font-lato text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <p class="font-lato text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     Surrounded by breathtaking natural beauty and panoramic views, the hermitage offers an atmosphere of peace and silence that nurtures mindfulness and inner reflection. Designed with simplicity and harmony in mind, the hermitage features a chapel, meditation halls, and open outdoor spaces dedicated to contemplation and spiritual practices. Its minimalist architecture blends seamlessly with nature, creating a tranquil environment that encourages spiritual connection and personal renewal. The institution also embraces eco-friendly practices, including rainwater harvesting and organic vegetable cultivation, reflecting a lifestyle rooted in sustainability and simplicity.
                 </p>
             </div>
@@ -87,7 +83,7 @@
                     Through Prayer and<br class="hidden lg:block" />
                     Fellowship
                 </h2>
-                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     <p>
                         <strong class="font-bold">Holy Qurbana is celebrated every Saturday</strong>, while a <strong class="font-bold">monthly meditation gathering is conducted on the last Saturday of each month</strong>. These gatherings bring together priests, nuns, spiritual organizations, and members of the public for prayer, meditation, reflection, and gardening activities. In addition, staff members from the Society’s various institutions gather at the hermitage every quarter for moments of spiritual enrichment and fellowship.
                     </p>

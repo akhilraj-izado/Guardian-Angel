@@ -4,30 +4,25 @@
 
 <!-- ================= OUR GOALS HERO SECTION ================= -->
 <!-- ================= HERO SECTION (OVERFLOW VISIBLE IS REQUIRED FOR HALF OVERLAP) ================= -->
-<section class="relative bg-white mb-28 sm:mb-32 lg:mb-36 md:min-h-[75vh] lg:min-h-[85vh] flex flex-col justify-between overflow-visible">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 lg:mb-36 md:min-h-[75vh] lg:min-h-[85vh] flex flex-col justify-between overflow-visible">
   
-  <!-- Desktop Background Image (Hands Holding Blue Heart) -->
-  <div 
-    class="hidden md:block absolute inset-0 bg-cover bg-right bg-no-repeat transition-transform duration-1000 ease-out"
+  <!-- Banner wrapper: on mobile the background is limited to the text area (relative);
+       from md up it is static so the background covers the whole section as before. -->
+  <div class="relative md:static flex-1 flex">
+
+  <!-- Background Image (Hands Holding Blue Heart) -->
+  <div
+    class="absolute inset-0 bg-cover bg-right bg-no-repeat transition-transform duration-1000 ease-out"
     style="background-image: url('/images/our-goals-hero-bg.png');"
     data-aos="fade-left"
     data-aos-duration="1200"
   ></div>
 
-  <!-- Soft Gradient Overlay for Text Readability -->
-  <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent"></div>
-
-  <!-- Mobile Top Image -->
-  <img 
-    src="/images/our-goals-hero-bg.png" 
-    alt="Hands holding a blue heart" 
-    class="md:hidden w-full h-auto object-cover max-h-[380px]"
-    data-aos="fade-down"
-    data-aos-duration="800"
-  />
+  <!-- Soft White Gradient Overlay for Text Readability (stronger on mobile where text spans full width) -->
+  <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/30 md:from-white md:via-white/85 md:to-transparent"></div>
 
   <!-- Main Hero Content Container -->
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-16 md:pt-24 lg:pt-32 pb-36 sm:pb-44 md:pb-48 lg:pb-52 w-full flex-1 flex items-center">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 sm:pt-16 md:pt-24 lg:pt-32 pb-14 sm:pb-16 lg:pb-52 w-full flex-1 flex items-center">
     <div class="w-full md:w-[58%] lg:w-[46%]" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
       
       <!-- Main Heading -->
@@ -36,7 +31,7 @@
       </h1>
 
       <!-- Description Paragraphs in Lato font -->
-      <div class="font-lato mt-6 space-y-5 text-[#1E1E1E] text-xs sm:text-sm md:text-base lg:text-[17px] leading-relaxed max-w-xl">
+      <div class="font-lato mt-4 sm:mt-6 space-y-4 sm:space-y-5 text-[#1E1E1E] text-sm md:text-base lg:text-[17px] leading-relaxed max-w-xl">
         <p>
           We are committed to creating a compassionate and inclusive society where every individual is valued, cared for, and empowered to live with dignity.
         </p>
@@ -48,10 +43,13 @@
     </div>
   </div>
 
+  </div>
+
   <!-- ================= HALF ON HERO BG & HALF BELOW BLUE BOX (EXACT SCREENSHOT DESIGN) ================= -->
-  <div class="absolute bottom-0 left-0 right-0 translate-y-1/2 z-30 px-4 sm:px-6 lg:px-8 pointer-events-none">
+  <!-- Mobile/tablet: sits in normal flow below the text. Desktop: floats half over the next section. -->
+  <div class="relative lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 z-30 px-4 sm:px-6 lg:px-8 pt-8 md:pt-0 pb-12 sm:pb-14 lg:pb-0 pointer-events-none">
     <div 
-      class="max-w-6xl mx-auto bg-[#182852] text-white rounded-none shadow-[0_15px_35px_rgba(0,0,0,0.18)] py-6 sm:py-7 lg:py-8 px-4 sm:px-6 lg:px-8 pointer-events-auto"
+      class="max-w-6xl mx-auto bg-[#182852] text-white rounded-none shadow-[0_15px_35px_rgba(0,0,0,0.18)] py-3 sm:py-7 lg:py-8 px-4 sm:px-6 lg:px-8 pointer-events-auto"
       data-aos="fade-up" 
       data-aos-duration="800" 
       data-aos-delay="300"
@@ -158,65 +156,65 @@
       
       <!-- Card 1: Holistic Care -->
       <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
-        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
-          <img src="/images/ourgoals-icon.png" alt="Holistic Care Icon" class="w-full h-full object-contain" />
+        <div class="w-14 h-14 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+          <img src="/images/ourgoals-holistic-care.png" alt="" class="w-full h-full object-contain" />
         </div>
         <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
           Holistic<br />Care
         </h3>
-        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+        <p class="font-lato mt-2.5 text-sm lg:text-xs text-navy/80 leading-relaxed">
           Provide comprehensive care that nurtures the body, mind, and spirit.
         </p>
       </div>
 
       <!-- Card 2: Empower Through Education -->
       <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
-          <img src="/images/ourgoals-icon.png" alt="Empower Through Education Icon" class="w-full h-full object-contain" />
+        <div class="w-14 h-14 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+          <img src="/images/ourgoals-education.png" alt="" class="w-full h-full object-contain" />
         </div>
         <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
           Empower Through<br />Education
         </h3>
-        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+        <p class="font-lato mt-2.5 text-sm lg:text-xs text-navy/80 leading-relaxed">
           Promote education &amp; learning to empower individuals &amp; communities.
         </p>
       </div>
 
       <!-- Card 3: Support the Vulnerable -->
       <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
-          <img src="/images/ourgoals-icon.png" alt="Support the Vulnerable Icon" class="w-full h-full object-contain" />
+        <div class="w-14 h-14 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+          <img src="/images/ourgoals-vulnerable.png" alt="" class="w-full h-full object-contain" />
         </div>
         <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
           Support the<br />Vulnerable
         </h3>
-        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+        <p class="font-lato mt-2.5 text-sm lg:text-xs text-navy/80 leading-relaxed">
           Extend help and protection to the elderly, sick, and marginalized.
         </p>
       </div>
 
       <!-- Card 4: Build Stronger Communities -->
       <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
-          <img src="/images/ourgoals-icon.png" alt="Build Stronger Communities Icon" class="w-full h-full object-contain" />
+        <div class="w-14 h-14 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+          <img src="/images/ourgoals-communities.png" alt="" class="w-full h-full object-contain" />
         </div>
         <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
           Build Stronger<br />Communities
         </h3>
-        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+        <p class="font-lato mt-2.5 text-sm lg:text-xs text-navy/80 leading-relaxed">
           Foster community participation and create lasting positive impact.
         </p>
       </div>
 
       <!-- Card 5: Uphold Dignity & Respect -->
       <div class="rounded-2xl border border-sky/70 bg-white p-6 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:-translate-y-1.5 transition-all duration-300 sm:col-span-2 lg:col-span-1" data-aos="fade-up" data-aos-delay="500">
-        <div class="w-16 h-16 rounded-full border-2 border-sky/40 flex items-center justify-center p-3.5 mb-4 transition-transform duration-300 hover:rotate-6">
-          <img src="/images/ourgoals-icon.png" alt="Uphold Dignity & Respect Icon" class="w-full h-full object-contain" />
+        <div class="w-14 h-14 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-110">
+          <img src="/images/ourgoals-dignity.png" alt="" class="w-full h-full object-contain" />
         </div>
         <h3 class="font-cormorant text-lg sm:text-xl font-bold text-navy leading-snug">
           Uphold Dignity &amp;<br />Respect
         </h3>
-        <p class="font-lato mt-2.5 text-xs text-navy/80 leading-relaxed">
+        <p class="font-lato mt-2.5 text-sm lg:text-xs text-navy/80 leading-relaxed">
           Uphold the dignity, rights, and well-being of every individual we serve.
         </p>
       </div>
@@ -248,7 +246,7 @@
             <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
               Compassion First
             </h4>
-            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+            <p class="font-lato mt-1 text-xs sm:text-[11px] text-navy/80 leading-snug">
               Every action is guided by empathy and respect.
             </p>
           </div>
@@ -261,7 +259,7 @@
             <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
               Quality &amp; Integrity
             </h4>
-            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+            <p class="font-lato mt-1 text-xs sm:text-[11px] text-navy/80 leading-snug">
               We maintain the highest standards of care &amp; transparency.
             </p>
           </div>
@@ -274,7 +272,7 @@
             <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
               Collaboration
             </h4>
-            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+            <p class="font-lato mt-1 text-xs sm:text-[11px] text-navy/80 leading-snug">
               We work with communities to create greater impact.
             </p>
           </div>
@@ -287,7 +285,7 @@
             <h4 class="font-cormorant text-sm sm:text-base font-bold text-navy leading-snug">
               Sustainability
             </h4>
-            <p class="font-lato mt-1 text-[11px] text-navy/80 leading-tight">
+            <p class="font-lato mt-1 text-xs sm:text-[11px] text-navy/80 leading-snug">
               We build programs that create lasting &amp; meaningful change.
             </p>
           </div>
@@ -307,7 +305,7 @@
           />
 
           <!-- Soft Left Gradient Overlay for Quote Readability -->
-          <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-white/90 via-white/75 to-white/40 sm:via-white/70 sm:to-transparent"></div>
 
           <!-- Quote & Mission Content -->
           <div class="relative z-10 max-w-sm sm:max-w-md space-y-6 sm:space-y-8 my-auto" data-aos="fade-up" data-aos-delay="300">
@@ -315,7 +313,7 @@
               “Alone we can do so little;<br />together we can do so much.”
             </h3>
 
-            <p class="font-lato text-xs sm:text-sm text-navy/90 leading-relaxed font-medium">
+            <p class="font-lato text-sm text-navy/90 leading-relaxed font-medium">
               Our mission is to continue serving humanity with love, compassion, &amp; commitment—today and for future generations.
             </p>
           </div>

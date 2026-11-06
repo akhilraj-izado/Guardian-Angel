@@ -3,24 +3,20 @@
 }
 
 <!-- ================= GUARDIAN ANGEL PEACE MISSION CENTER HERO SECTION ================= -->
-<section class="relative bg-white md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
+<section class="relative bg-white pt-[68px] sm:pt-[76px] md:pt-0 md:min-h-[75vh] lg:min-h-[88vh] overflow-hidden">
 
-    <!-- Desktop / Tablet Background Image -->
-    <div class="hidden md:block absolute inset-0 bg-cover bg-center bg-no-repeat"
+    <!-- Background Image (all screen sizes; text sits on top of it) -->
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
          style="background-image: url('/images/peace-mission-centre-hero.png');"
+         role="img" aria-label="Entrance of Guardian Angel Peace Mission Centre, Nedumbassherry"
          data-aos="fade-in"
          data-aos-duration="1200"></div>
 
-    <!-- Soft light wash on the left so the heading stays readable over the sky -->
-    <div class="hidden md:block absolute inset-0 bg-gradient-to-r from-white/50 via-white/15 to-transparent pointer-events-none"></div>
-
-    <!-- Mobile Top Image -->
-    <img src="/images/peace-mission-centre-hero.png"
-         alt="Entrance of Guardian Angel Peace Mission Centre, Nedumbassherry"
-         class="md:hidden w-full h-auto object-cover" />
+    <!-- White Gradient Overlay: strong on mobile (text spans full width); on desktop white only behind the text, then fades out -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/40 md:from-white/95 md:from-20% md:via-white/75 md:via-50% md:to-transparent md:to-65% pointer-events-none"></div>
 
     <!-- Main Content (sits in the upper-left, below the overlay header) -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-8 pb-12 md:pt-36 lg:pt-44 md:pb-24">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-14 pb-20 sm:pt-16 sm:pb-24 md:pt-36 lg:pt-44 md:pb-24">
         <div class="w-full md:w-[55%] lg:w-[50%]" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
 
             <h1 class="font-cormorant text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-semibold uppercase tracking-wide text-navy leading-[1.25]">
@@ -28,7 +24,7 @@
                 Center, Nedumbassherry.
             </h1>
 
-            <p class="font-lato mt-4 md:mt-5 text-sm sm:text-[15px] md:text-base text-[#4A5568] leading-relaxed max-w-xl">
+            <p class="font-lato mt-4 md:mt-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/90 leading-relaxed max-w-xl">
                 Guardian Angel Peace Mission Centre is a dedicated humanitarian institution committed to providing compassionate palliative and holistic care for critically ill cancer patients, elderly individuals, and vulnerable members of society.
             </p>
 
@@ -47,7 +43,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[44px] font-semibold text-navy leading-[1.25] mb-5">
                     About the center
                 </h2>
-                <p class="font-lato text-sm sm:text-[15px] md:text-[17px] text-[#5E6B7A] leading-relaxed">
+                <p class="font-lato text-sm sm:text-[15px] md:text-[17px] text-[#1E1E1E]/85 leading-relaxed">
                     Located near Cochin International Airport in Nedumbassery, Kerala, the Guardian Angel Peace Mission Centre serves as a place of hope, dignity, peace, and compassionate support for individuals facing terminal illness, pain, loneliness, and prolonged suffering. Rooted in the belief that every human life deserves dignity and comfort, the Centre focuses on relieving pain, reducing suffering, and improving quality of life through professional medical care combined with emotional, psychological, social, and spiritual support. For many patients and families, the Peace Mission Centre is not merely a healthcare institution, but a sanctuary of humanity, compassion, and care during life’s most difficult journey.
                 </p>
             </div>
@@ -75,7 +71,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[40px] font-semibold text-navy leading-tight mb-6">
                     Our Mission
                 </h2>
-                <ul class="font-lato list-disc marker:text-[#5E6B7A] pl-5 sm:pl-10 space-y-1.5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <ul class="font-lato list-disc marker:text-[#1E1E1E]/85 pl-5 sm:pl-10 space-y-1.5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     <li class="pl-2 sm:pl-4">To provide free residential palliative care for critically ill cancer patients during the residual stage of life</li>
                     <li class="pl-2 sm:pl-4">To offer compassionate medical, nursing, emotional, psychological, and spiritual support</li>
                     <li class="pl-2 sm:pl-4">To uphold dignity in life and dignity in death</li>
@@ -92,7 +88,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[40px] font-semibold text-navy leading-tight mb-6">
                     Our Vision
                 </h2>
-                <p class="font-lato text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <p class="font-lato text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     To build a compassionate society where critically ill patients, elderly individuals, and suffering families receive holistic, dignified, and peaceful care during the most vulnerable stages of life.
                 </p>
             </div>
@@ -131,7 +127,7 @@
                     <h4 class="font-cormorant text-2xl sm:text-[28px] font-semibold text-navy leading-tight mb-4">
                         Caring Beyond Cure
                     </h4>
-                    <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                    <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                         <p>
                             The Palliative Care Wing of the Center is specially dedicated to critically ill cancer patients who require continuous support, pain management, emotional reassurance, and dignified residential care during the final stages of life.
                         </p>
@@ -157,7 +153,7 @@
                     <h3 class="font-cormorant text-3xl sm:text-4xl lg:text-[40px] font-semibold text-navy leading-tight mb-4">
                         Geriatric Care Wing
                     </h3>
-                    <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                    <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                         <p>
                             The Geriatric Care Wing provides compassionate residential support and healthcare services for elderly individuals who require long-term care, supervision, and assistance in daily living.
                         </p>
@@ -198,9 +194,27 @@
             </button>
             <div class="pmc-acc-panel grid grid-rows-[1fr] transition-[grid-template-rows] duration-300 ease-in-out">
                 <div class="overflow-hidden">
-                    <p class="font-lato px-5 sm:px-6 pb-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-                        Round-the-clock residential palliative care for critically ill cancer patients, including pain and symptom management, nursing care, emotional reassurance, and spiritual support, all provided completely free of charge.
-                    </p>
+                    <div class="font-lato px-5 sm:px-6 pb-6 space-y-4 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
+                        <p>
+                            The Centre provides specialized palliative care services for patients suffering from advanced cancer and other life-limiting illnesses.
+                        </p>
+                        <div>
+                            <h4 class="font-bold text-navy mb-2">Services Include</h4>
+                            <ul class="list-disc pl-5 sm:pl-6 md:columns-2 md:gap-10 space-y-1">
+                                <li class="pl-2">Residential inpatient palliative care</li>
+                                <li class="pl-2">Outpatient (OP) consultation services</li>
+                                <li class="pl-2">Pain and symptom management</li>
+                                <li class="pl-2">Doctor and nursing care</li>
+                                <li class="pl-2">Laboratory facilities for medical investigations</li>
+                                <li class="pl-2">Distribution of medicines and medical supplies</li>
+                                <li class="pl-2">Emotional and psychological counseling</li>
+                                <li class="pl-2">Spiritual guidance and prayer support</li>
+                                <li class="pl-2">Family counseling and caregiver assistance</li>
+                                <li class="pl-2">End-of-life care and support</li>
+                                <li class="pl-2">Ambulance and referral transport services</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -213,9 +227,27 @@
             </button>
             <div class="pmc-acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
                 <div class="overflow-hidden">
-                    <p class="font-lato px-5 sm:px-6 pb-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-                        Home-based palliative and nursing care for bedridden and seriously ill patients, with regular visits from our care team and guidance for family caregivers.
-                    </p>
+                    <div class="font-lato px-5 sm:px-6 pb-6 space-y-4 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
+                        <p class="font-bold text-navy">Bringing Compassionate Care to the Doorstep</p>
+                        <p>
+                            Understanding that many seriously ill patients are unable to travel due to weakness, pain, or financial hardship, the Centre extends its services through a dedicated Home Care Program. Medical and palliative care teams regularly visit homes in villages and rural communities to provide compassionate care within the comfort of patients&rsquo; homes.
+                        </p>
+                        <div>
+                            <h4 class="font-bold text-navy mb-2">Home Care Support Includes</h4>
+                            <ul class="list-disc pl-5 sm:pl-6 md:columns-2 md:gap-10 space-y-1">
+                                <li class="pl-2">Medical examinations and follow-up care</li>
+                                <li class="pl-2">Nursing care and wound dressing</li>
+                                <li class="pl-2">Pain management and symptom control</li>
+                                <li class="pl-2">Distribution of medicines and medical equipment</li>
+                                <li class="pl-2">Counseling and emotional support</li>
+                                <li class="pl-2">Guidance for caregivers and family members</li>
+                                <li class="pl-2">Home-based palliative and end-of-life care</li>
+                            </ul>
+                        </div>
+                        <p>
+                            These visits provide not only medical support, but also emotional reassurance, comfort, and hope to families facing difficult circumstances.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -228,9 +260,19 @@
             </button>
             <div class="pmc-acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
                 <div class="overflow-hidden">
-                    <p class="font-lato px-5 sm:px-6 pb-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-                        An in-house pharmacy ensures that patients and residents receive the medicines they need on time, under the supervision of qualified staff.
-                    </p>
+                    <div class="font-lato px-5 sm:px-6 pb-6 space-y-4 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
+                        <div>
+                            <p class="mb-2">The Centre operates a dedicated pharmacy that supplies medicines for:</p>
+                            <ul class="list-disc pl-5 sm:pl-6 space-y-1">
+                                <li class="pl-2">Inpatients</li>
+                                <li class="pl-2">Home care patients</li>
+                                <li class="pl-2">Outside patients and the general public</li>
+                            </ul>
+                        </div>
+                        <p>
+                            Medicines for palliative care patients are provided <strong class="font-bold text-navy">free of charge</strong>, while concessional rates are offered to others.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -243,9 +285,19 @@
             </button>
             <div class="pmc-acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
                 <div class="overflow-hidden">
-                    <p class="font-lato px-5 sm:px-6 pb-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-                        A clean, modern kitchen prepares nutritious meals suited to each patient's and resident's medical and dietary needs.
-                    </p>
+                    <div class="font-lato px-5 sm:px-6 pb-6 space-y-4 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
+                        <div>
+                            <p class="mb-2">An in-house modern kitchen facility prepares hygienic and nutritious meals for:</p>
+                            <ul class="list-disc pl-5 sm:pl-6 space-y-1">
+                                <li class="pl-2">Patients</li>
+                                <li class="pl-2">Bystanders</li>
+                                <li class="pl-2">Staff members on duty</li>
+                            </ul>
+                        </div>
+                        <p>
+                            Special attention is given to dietary needs, nutrition, cleanliness, and quality food preparation.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,9 +310,23 @@
             </button>
             <div class="pmc-acc-panel grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
                 <div class="overflow-hidden">
-                    <p class="font-lato px-5 sm:px-6 pb-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-                        Doctors, nurses, caregivers, and support staff work together to provide compassionate, professional care to every patient and resident.
-                    </p>
+                    <div class="font-lato px-5 sm:px-6 pb-6 space-y-4 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
+                        <div>
+                            <p class="mb-2">The Centre is supported by a committed and experienced multidisciplinary team comprising:</p>
+                            <ul class="list-disc pl-5 sm:pl-6 space-y-1">
+                                <li class="pl-2"><strong class="font-bold text-navy">3</strong> Doctors</li>
+                                <li class="pl-2"><strong class="font-bold text-navy">15</strong> Nurses</li>
+                                <li class="pl-2">Caregivers and supporting staff</li>
+                                <li class="pl-2">Counselors and volunteers</li>
+                            </ul>
+                        </div>
+                        <p>
+                            In total, more than <strong class="font-bold text-navy">70 dedicated staff members</strong> work together to provide compassionate and professional care.
+                        </p>
+                        <p>
+                            The entire premises is maintained in a neat, peaceful, hygienic, and patient-friendly manner, supported by courteous and caring staff members.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -289,7 +355,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[40px] font-semibold text-navy leading-tight mb-4">
                     Holistic Philosophy of Care
                 </h2>
-                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     <p>
                         At the heart of the Guardian Angel Peace Mission Centre is a holistic philosophy that recognizes the physical, emotional, psychological, social, and spiritual dimensions of human life.
                     </p>
@@ -328,7 +394,7 @@
                     Supported by Compassion<br class="hidden sm:block" />
                     and Generosity
                 </h2>
-                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
+                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-base text-[#1E1E1E]/85 leading-relaxed">
                     <div>
                         <p>The humanitarian mission of the Guardian Angel Peace Mission Center continues through the generous support of:</p>
                         <ul class="list-disc pl-5 sm:pl-6">
@@ -427,7 +493,7 @@
                 <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[44px] font-semibold text-navy leading-[1.25] mb-5">
                     A Home of Hope, Peace, and Human Dignity
                 </h2>
-                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-[17px] text-[#5E6B7A] leading-relaxed">
+                <div class="font-lato space-y-5 text-sm sm:text-[15px] md:text-[17px] text-[#1E1E1E]/85 leading-relaxed">
                     <p>
                         The Guardian Angel Peace Mission Centre continues its mission as a sanctuary of compassionate palliative and geriatric care rooted in humanity, dignity, and selfless service.
                     </p>
