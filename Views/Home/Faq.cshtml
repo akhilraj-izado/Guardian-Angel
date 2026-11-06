@@ -32,7 +32,6 @@
 <!-- ================= FAQ ACCORDION SECTION ================= -->
 <section class="py-12 md:py-20 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-
     <!-- Top Filter Bar -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10 md:mb-12" data-aos="fade-down" data-aos-duration="800">
       <div class="flex flex-wrap items-center gap-2 sm:gap-3" id="faq-tabs">
@@ -367,19 +366,76 @@
 <script>
   let currentFaqTab = 'all';
 
+  // ---- Smooth accordion animation (slide + fade) ----
+  const FAQ_ANIM_MS = 350;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Open/closed state lives in data-state once animated; before that, the 'hidden' class tells us.
+  function isFaqOpen(el) {
+    return el.dataset.state ? el.dataset.state === 'open' : !el.classList.contains('hidden');
+  }
+
+  function clearFaqStyles(el) {
+    el.style.height = el.style.paddingBottom = el.style.opacity = el.style.overflow = el.style.transition = '';
+  }
+
+  function runFaqTransition(el, done) {
+    clearTimeout(el._faqTimer);
+    el._faqTimer = setTimeout(done, FAQ_ANIM_MS + 50); // timer instead of transitionend: always fires once
+  }
+
+  function openFaq(el) {
+    if (isFaqOpen(el)) return;
+    el.dataset.state = 'open';
+    el.classList.remove('hidden');
+    if (reduceMotion) { clearFaqStyles(el); return; }
+
+    const target = el.scrollHeight;               // full height incl. bottom padding
+    el.style.overflow = 'hidden';
+    el.style.transition = 'none';
+    el.style.height = '0px';
+    el.style.paddingBottom = '0px';
+    el.style.opacity = '0';
+    el.offsetHeight;                               // force reflow so the start values apply
+    el.style.transition = `height ${FAQ_ANIM_MS}ms ease, padding-bottom ${FAQ_ANIM_MS}ms ease, opacity ${FAQ_ANIM_MS}ms ease`;
+    el.style.height = target + 'px';
+    el.style.paddingBottom = '';
+    el.style.opacity = '1';
+    runFaqTransition(el, () => { if (el.dataset.state === 'open') clearFaqStyles(el); });
+  }
+
+  function closeFaq(el) {
+    if (!isFaqOpen(el)) return;
+    el.dataset.state = 'closed';
+    if (reduceMotion) { el.classList.add('hidden'); clearFaqStyles(el); return; }
+
+    el.style.overflow = 'hidden';
+    el.style.transition = 'none';
+    el.style.height = el.scrollHeight + 'px';
+    el.offsetHeight;
+    el.style.transition = `height ${FAQ_ANIM_MS}ms ease, padding-bottom ${FAQ_ANIM_MS}ms ease, opacity ${FAQ_ANIM_MS}ms ease`;
+    el.style.height = '0px';
+    el.style.paddingBottom = '0px';
+    el.style.opacity = '0';
+    runFaqTransition(el, () => {
+      if (el.dataset.state === 'closed') { el.classList.add('hidden'); clearFaqStyles(el); }
+    });
+  }
+
   function toggleAccordion(button) {
     const clickedItem = button.closest('.faq-item');
     const content = clickedItem.querySelector('.faq-content');
     const minusIcon = clickedItem.querySelector('.minus-icon');
     const plusIcon = clickedItem.querySelector('.plus-icon');
-    const isCurrentlyOpen = !content.classList.contains('hidden');
+    const isCurrentlyOpen = isFaqOpen(content);
 
     document.querySelectorAll('.faq-item').forEach(item => {
+      if (item === clickedItem && !isCurrentlyOpen) return; // about to open; don't close it first
       const c = item.querySelector('.faq-content');
       const minus = item.querySelector('.minus-icon');
       const plus = item.querySelector('.plus-icon');
 
-      c.classList.add('hidden');
+      closeFaq(c);
       minus.classList.add('hidden');
       plus.classList.remove('hidden');
 
@@ -388,7 +444,7 @@
     });
 
     if (!isCurrentlyOpen) {
-      content.classList.remove('hidden');
+      openFaq(content);
       minusIcon.classList.remove('hidden');
       plusIcon.classList.add('hidden');
 
@@ -396,9 +452,9 @@
       clickedItem.classList.remove('bg-[#EEF4FF]/50');
     }
 
-    // Refresh layout positions on accordion collapse/expand
+    // Refresh layout positions once the slide has finished
     if (typeof AOS !== 'undefined') {
-      AOS.refresh();
+      setTimeout(() => AOS.refresh(), reduceMotion ? 0 : FAQ_ANIM_MS + 60);
     }
   }
 
