@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Bethesda Mental Health Center";
 }
 
@@ -150,6 +150,118 @@
 
 </section>
 
+<!-- ================= EDUCATION, DIGITAL AWARENESS & COMMITMENT (3 CARDS) ================= -->
+<section class="bg-white py-14 sm:py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+
+            <!-- Card 1: Education, Training & Academic Support -->
+            <div data-aos="fade-up" data-aos-duration="900">
+                <div class="w-full h-52 sm:h-60 md:h-44 lg:h-52 rounded-2xl overflow-hidden shadow-md mb-5">
+                    <img src="/images/bethesda-education-training.png"
+                         alt="A psychiatrist teaching nursing and psychology students about mental health"
+                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
+                <h3 class="font-lato text-lg lg:text-xl font-medium text-navy leading-snug mb-3">
+                    Education, Training, &amp; Academic Support
+                </h3>
+                <p class="font-lato text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed">
+                    The hospital also functions as a teaching and training center for students and professionals in the fields of psychology, psychiatric social work, and nursing. The institution provides internships, clinical postings, orientation programs, and practical training opportunities for students from various academic institutions. These academic collaborations help nurture future mental health professionals while promoting greater awareness and understanding of mental healthcare in society.
+                </p>
+            </div>
+
+            <!-- Card 2: Digital Mental Health Awareness -->
+            <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+                <div class="w-full h-52 sm:h-60 md:h-44 lg:h-52 rounded-2xl overflow-hidden shadow-md mb-5">
+                    <img src="/images/bethesda-digital-awareness.png"
+                         alt="A nurse working on the Mind Health Club website and social media"
+                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
+                <h3 class="font-lato text-lg lg:text-xl font-medium text-navy leading-snug mb-3">
+                    Digital Mental Health Awareness
+                </h3>
+                <p class="font-lato text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed">
+                    Through its Mind Health Club and digital outreach platforms, the hospital actively promotes mental health education and awareness among the public. Educational content addressing social, psychological, legal, and emotional issues is shared through online platforms and community engagement programs to encourage informed conversations about mental health and well-being.
+                </p>
+            </div>
+
+            <!-- Card 3: Commitment to Society -->
+            <div data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+                <div class="w-full h-52 sm:h-60 md:h-44 lg:h-52 rounded-2xl overflow-hidden shadow-md mb-5">
+                    <img src="/images/bethesda-commitment-society.png"
+                         alt="A nurse walking with a patient through the hospital courtyard"
+                         class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                </div>
+                <h3 class="font-lato text-lg lg:text-xl font-medium text-navy leading-snug mb-3">
+                    Commitment to Society
+                </h3>
+                <p class="font-lato text-sm md:text-[14px] text-[#1E1E1E]/85 leading-relaxed">
+                    Over the decades, Bethsada Mental Hospital has positively impacted countless individuals and families by improving access to mental healthcare, promoting rehabilitation, and supporting social reintegration. The institution continues to evolve by adopting modern treatment approaches, expanding services, and strengthening outreach initiatives to better serve the community. With a continued commitment to compassionate care, awareness, rehabilitation, and inclusivity, Bethsada Mental Hospital remains dedicated to building a healthier and more understanding society.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- ================= OUR SERVICES (12 ICONS ON LEAF BACKGROUND) ================= -->
+@{
+    // Label (may contain <br />) and the inner SVG markup for each service icon (24x24 line icons)
+    var topServices = new (string Label, string Svg)[]
+    {
+        ("Day Care<br />OP Facility", "<path d='M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3'/><path d='M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4'/><circle cx='20' cy='10' r='2'/>"),
+        ("100 Bed<br />IP Facility", "<path d='M2 4v16'/><path d='M2 8h18a2 2 0 0 1 2 2v10'/><path d='M2 17h20'/><path d='M6 8v9'/>"),
+        ("Long Term Care<br />Facility", "<path d='M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z'/>"),
+        ("De-addiction<br />Center", "<path d='M12 12V6'/><path d='M12 8c0-2.5 2-4.5 5-4.5 0 2.8-2 4.5-5 4.5z'/><path d='M12 10c0-2-1.7-3.5-4-3.5 0 2 1.7 3.5 4 3.5z'/><path d='M2 17h3l3.5 2.5a2 2 0 0 0 1.2.4H17a1 1 0 0 0 .7-.3l3.6-3.6a1.4 1.4 0 0 0-2-2L16 17h-4'/><path d='M5 15l2.5-2a3 3 0 0 1 1.9-.6H13a1.5 1.5 0 0 1 0 3h-2'/>"),
+        ("Alzheimer’s<br />Treatment", "<path d='M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z'/><path d='M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z'/><path d='M12 5v13'/><path d='M7.5 9.5h2'/><path d='M14.5 9.5h2'/><path d='M7.5 14h2'/><path d='M14.5 14h2'/>"),
+    };
+    var bottomServices = new (string Label, string Svg)[]
+    {
+        ("Child Therapy", "<circle cx='12' cy='7' r='2.5'/><circle cx='5.5' cy='10' r='2'/><circle cx='18.5' cy='10' r='2'/><path d='M8 21v-2.5a4 4 0 0 1 8 0V21'/><path d='M2.5 21v-2a3 3 0 0 1 3-3'/><path d='M21.5 21v-2a3 3 0 0 0-3-3'/>"),
+        ("Behavior<br />Therapy", "<path d='M9 21v-3.5A7 7 0 1 1 18.5 12l1.5 3h-2v2.5a2 2 0 0 1-2 2H14V21'/><path d='M11.5 13.5 9.4 11.5a1.3 1.3 0 0 1 2.1-1.6 1.3 1.3 0 0 1 2.1 1.6z'/>"),
+        ("Sex Therapy", "<circle cx='8.5' cy='14' r='5'/><circle cx='14.5' cy='14' r='5'/><path d='M18 10.5 21.5 7'/><path d='M17.5 7h4v4'/>"),
+        ("Psychotherapy", "<path d='M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z'/><path d='M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1'/><path d='M5.5 6.5h.01'/><path d='M8 6.5h.01'/><path d='M10.5 6.5h.01'/>"),
+        ("Counselling", "<circle cx='12' cy='6' r='3'/><path d='M8 13.5a4 4 0 0 1 8 0'/><path d='M2 18h3l3.5 2.5a2 2 0 0 0 1.2.4H17a1 1 0 0 0 .7-.3l3.6-3.6a1.4 1.4 0 0 0-2-2L16 18h-4'/><path d='M5 16l2.5-2'/>"),
+        ("Relaxation<br />Therapy", "<path d='M12 20c-2.5-1.8-4-4.5-4-7.5S9.5 6.3 12 4c2.5 2.3 4 5.5 4 8.5s-1.5 5.7-4 7.5z'/><path d='M12 20c-4.5 0-8.5-2.5-9.5-7.5 3 0 5.5 1 7 2.8'/><path d='M12 20c4.5 0 8.5-2.5 9.5-7.5-3 0-5.5 1-7 2.8'/>"),
+        ("Custodial Care<br />Facility", "<circle cx='14' cy='4' r='1.6'/><path d='M13.5 7.5V13h5l2 6'/><path d='M13.5 10H18'/><path d='M10 9.5a6 6 0 1 0 6.8 8.3'/>"),
+    };
+}
+<section class="relative overflow-hidden bg-[#FBF8EE] bg-cover bg-center bg-no-repeat py-14 sm:py-16 lg:py-20"
+         style="background-image: url('/images/bethesda-services-bg.png');">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+
+        <!-- Row 1: heading on the left, first 5 services on the right (stacked on smaller screens) -->
+        <div class="flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-10">
+            <h2 class="font-cormorant text-4xl sm:text-5xl xl:text-[60px] font-bold text-navy leading-tight text-center lg:text-left xl:w-[30%] shrink-0" data-aos="fade-right" data-aos-duration="900">
+                Our Services
+            </h2>
+            <ul class="flex flex-wrap justify-center lg:justify-start gap-x-3 sm:gap-x-6 lg:gap-x-3 xl:gap-x-6 gap-y-6 sm:gap-y-8" data-aos="fade-up" data-aos-duration="900">
+                @foreach (var s in topServices)
+                {
+                    <li class="w-[96px] sm:w-[120px] lg:w-[112px] xl:w-[128px] flex flex-col items-center text-center group">
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-full border-2 border-navy bg-white/40 flex items-center justify-center mb-2.5 transition-all duration-300 group-hover:bg-navy group-hover:text-white text-navy">
+                            <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">@Html.Raw(s.Svg)</svg>
+                        </div>
+                        <span class="font-lato text-xs sm:text-sm lg:text-[15px] font-bold text-navy leading-tight">@Html.Raw(s.Label)</span>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!-- Row 2: remaining 7 services -->
+        <ul class="flex flex-wrap justify-center lg:justify-end gap-x-3 sm:gap-x-6 lg:gap-x-4 gap-y-6 sm:gap-y-8 mt-6 sm:mt-8 lg:mt-10" data-aos="fade-up" data-aos-duration="900" data-aos-delay="150">
+            @foreach (var s in bottomServices)
+            {
+                <li class="w-[96px] sm:w-[120px] lg:w-[112px] xl:w-[128px] flex flex-col items-center text-center group">
+                    <div class="w-16 h-16 sm:w-20 sm:h-20 lg:w-[88px] lg:h-[88px] rounded-full border-2 border-navy bg-white/40 flex items-center justify-center mb-2.5 transition-all duration-300 group-hover:bg-navy group-hover:text-white text-navy">
+                        <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">@Html.Raw(s.Svg)</svg>
+                    </div>
+                    <span class="font-lato text-xs sm:text-sm lg:text-[15px] font-bold text-navy leading-tight">@Html.Raw(s.Label)</span>
+                </li>
+            }
+        </ul>
+
+    </div>
+</section>
 
 <section class="relative w-full overflow-hidden bg-white">
 
@@ -194,7 +306,7 @@
             <div class="relative w-full h-[300px] sm:h-[400px] lg:h-[390px]
                   overflow-hidden rounded-r-[180px]">
 
-                <img src="/images/Compassionate Care and Rehabilitation Montage.png"
+                <img src="/images/Cheerful Elders Enjoying a Board Game.png"
                      alt="Compassionate care and rehabilitation services"
                      class="w-full h-full object-cover object-center" />
 

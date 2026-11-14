@@ -59,7 +59,7 @@
         <!-- Right Image: Bleeds to Right Screen Edge with Left Arch Curve -->
         <div class="w-full lg:w-[52%] xl:w-[54%] shrink-0" data-aos="fade-left" data-aos-duration="900">
             <div class="w-full h-72 sm:h-96 md:h-[460px] lg:h-[500px] rounded-l-[130px] sm:rounded-l-[190px] lg:rounded-l-[250px] rounded-r-none overflow-hidden shadow-xl bg-[#FAF0DE]">
-                <img src="/images/Welcoming-Bethsada-School-Morning.png"
+                <img src="/images/Students Walking Toward Bethsada School.png"
                      alt="Clinical Services - Compassionate Caregiver Connection"
                      class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
             </div>
@@ -494,8 +494,9 @@
 
 <!-- ================= BETHSADA JUNIOR SCHOOL SECTION ================= -->
 <!-- md+: the highlights box sits on the image's bottom edge, half inside and half below.
-     The section's bottom margin reserves room for the half that hangs outside. -->
-<section class="relative bg-white pt-10 md:pt-0 mb-12 md:mb-28 lg:mb-24">
+     The half that hangs outside overlaps the top of the Our Journey background below
+     (that section's top padding reserves room for it). -->
+<section class="relative z-10 bg-white pt-10 md:pt-0">
   <div class="relative">
 
     <!-- Background Image (all screen sizes; text sits on top of it) -->
@@ -563,27 +564,43 @@
 </section>
 
 <!-- ================= BETHSADA JUNIOR SCHOOL: OUR JOURNEY ================= -->
-<!-- Top padding is smaller than the bottom because the section above already leaves room under its icon box;
-     together they give roughly the same visible gap above the heading as below the text. -->
-<section class="bg-white pt-0 md:pt-12 pb-12 md:pb-16 lg:pb-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10" data-aos="fade-up" data-aos-duration="900">
+<!-- Full-width school background (flag hoisting); text sits on the misty left side.
+     md+: top padding leaves room for the highlights box that hangs over from the section above. -->
+<section class="relative overflow-hidden bg-white pt-12 md:pt-40 lg:pt-36 pb-14 md:pb-20 lg:pb-24">
 
-        <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[42px] font-semibold text-navy leading-tight mb-5 md:mb-6">
-            Our Journey
-        </h2>
+    <!-- Background Image -->
+    <div class="absolute inset-0 bg-cover bg-right-bottom bg-no-repeat"
+         style="background-image: url('/images/bethsada-junior-our-journey-bg.png');"
+         role="img" aria-label="Students hoisting the national flag in front of Bethsada Public School while teachers salute"
+         data-aos="fade-in"
+         data-aos-duration="1200"></div>
 
-        <div class="font-lato space-y-5 md:space-y-6 text-sm sm:text-[15px] md:text-base text-[#5E6B7A] leading-relaxed">
-            <p>
-                The institution emerged as an extension of the educational vision successfully implemented through Bethsada Public School, Vengola, with the intention of reaching children from villages such as Airapuram, Mazhuvannoor, Kilikulam, Perumani, and neighboring areas where access to quality schooling remained limited. The establishment of the school was motivated by the growing realization that many children from these rural regions faced difficulties in travelling long distances for education. Understanding the educational and social challenges experienced by economically weaker families, the Society envisioned a school that would combine academic excellence with moral values, personal development, and social responsibility within a safe and nurturing environment.
-            </p>
-            <p>
-                Founded on the principles of compassion, equality, discipline, and empowerment, Bethsada Junior School has consistently worked towards ensuring that quality education becomes available to all sections of society, especially children from underprivileged and marginalized backgrounds. The institution believes that education is not merely the transmission of knowledge, but a transformative process that shapes character, confidence, leadership, and responsible citizenship. The school began with modest infrastructure and limited resources, but through the dedicated efforts of socially committed educators, philanthropists, well-wishers, and members of the local community, it gradually developed into a respected educational institution in the region. The steady growth of the school stands as a testimony to the trust placed in the institution by parents and the wider community. At present, Bethsada Junior School provides education from Kindergarten to Tenth Standard following the CBSE curriculum. With more than 300 students, the school continues to maintain high academic standards while giving equal importance to the emotional, social, cultural, and moral development of every child. The institution strives to create a learning atmosphere that is inclusive, child-friendly, and intellectually stimulating. In addition to regular classroom education, the school actively encourages participation in extracurricular activities, arts, sports, personality development programmes, and value-based education. Students are provided opportunities to develop communication skills, creativity, teamwork, leadership qualities, and self-confidence, enabling them to face future challenges with courage and determination. Special attention is given to first-generation learners and students from rural and economically disadvantaged families who may otherwise have limited access to educational opportunities. By providing guidance, encouragement, and a supportive environment, the institution plays an important role in reducing educational inequality and promoting social upliftment within the community.
-            </p>
-            <p>
-                The school is administered by a committed and competent faculty dedicated to the holistic development of students. Teachers strive to cultivate curiosity, discipline, critical thinking, and compassion among learners while maintaining close relationships with parents and the community. Their sincere efforts have helped create a positive educational culture rooted in care, responsibility, and mutual respect.
-            </p>
+    <!-- White wash: strong on mobile (text spans full width); on desktop only over the left text column -->
+    <div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/85 to-white/65 md:from-white/90 md:from-25% md:via-white/60 md:via-45% md:to-transparent md:to-60% pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="w-full md:w-[58%] lg:w-[48%]" data-aos="fade-right" data-aos-duration="900">
+
+            <h2 class="font-cormorant text-3xl sm:text-4xl lg:text-[42px] font-semibold text-navy leading-tight mb-5 md:mb-6">
+                Our Journey
+            </h2>
+
+            <div class="font-lato space-y-5 text-sm sm:text-[15px] text-[#1E1E1E]/90 leading-relaxed">
+                <p>
+                    The institution emerged as an extension of the educational vision successfully implemented through Bethsada Public School, Vengola, with the intention of reaching children from villages such as Airapuram, Mazhuvannoor, Kilikulam, Perumani, and neighboring areas where access to quality schooling remained limited. The establishment of the school was motivated by the growing realization that many children from these rural regions faced difficulties in travelling long distances for education. Understanding the educational and social challenges experienced by economically weaker families, the Society envisioned a school that would combine academic excellence with moral values, personal development, and social responsibility within a safe and nurturing environment.
+                </p>
+                <p>
+                    Founded on the principles of compassion, equality, discipline, and empowerment, Bethsada Junior School has consistently worked towards ensuring that quality education becomes available to all sections of society, especially children from underprivileged and marginalized backgrounds. The institution believes that education is not merely the transmission of knowledge, but a transformative process that shapes character, confidence, leadership, and responsible citizenship.
+                </p>
+                <p>
+                    The school began with modest infrastructure and limited resources, but through the dedicated efforts of socially committed educators, philanthropists, well-wishers, and members of the local community, it gradually developed into a respected educational institution in the region. The steady growth of the school stands as a testimony to the trust placed in the institution by parents and the wider community. At present, Bethsada Junior School provides education from Kindergarten to Tenth Standard following the CBSE curriculum. With more than 300 students, the school continues to maintain high academic standards while giving equal importance to the emotional, social, cultural, and moral development of every child. The institution strives to create a learning atmosphere that is inclusive, child-friendly, and intellectually stimulating. In addition to regular classroom education, the school actively encourages participation in extracurricular activities, arts, sports, personality development programmes, and value-based education. Students are provided opportunities to develop communication skills, creativity, teamwork, leadership qualities, and self-confidence, enabling them to face future challenges with courage and determination. Special attention is given to first-generation learners and students from rural and economically disadvantaged families who may otherwise have limited access to educational opportunities. By providing guidance, encouragement, and a supportive environment, the institution plays an important role in reducing educational inequality and promoting social upliftment within the community.
+                </p>
+                <p>
+                    The school is administered by a committed and competent faculty dedicated to the holistic development of students. Teachers strive to cultivate curiosity, discipline, critical thinking, and compassion among learners while maintaining close relationships with parents and the community. Their sincere efforts have helped create a positive educational culture rooted in care, responsibility, and mutual respect.
+                </p>
+            </div>
+
         </div>
-
     </div>
 </section>
 
